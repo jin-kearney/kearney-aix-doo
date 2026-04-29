@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI Ready Data Module/Framework/기존 5 Framework.md",
+                "file": "Pilot Module/Pilot.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "기존 5 Framework"
+              "title": "Pilot"
             }
           }
         ]
@@ -180,13 +180,15 @@
       "daily-notes:오늘의 일일 노트 열기": false,
       "templates:템플릿 삽입": false,
       "command-palette:명령어 팔레트 열기": false,
-      "bases:새 베이스 생성하기": false
+      "bases:새 베이스 생성하기": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "d20f2fb73a431f52",
   "lastOpenFiles": [
-    "AI Ready Data Module/Framework/AI 과제 유형화.md",
     "AI Ready Data Module/Framework/기존 5 Framework.md",
+    "Pilot Module/Pilot.md",
+    "AI Ready Data Module/Framework/AI 과제 유형화.md",
     "AI Ready Data Module/Framework/Data Lifecycle.md",
     "AI Ready Data Module/베이스.base",
     "AI Ready Data Module/무제.canvas",
