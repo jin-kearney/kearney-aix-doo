@@ -1,4 +1,4 @@
-기존 RFP상에서 두산에서 구상한 Framework. 
+기존 RFP상에서 두산에서 구상한 Framework. 변경 필요 
 ## Findable
 
 ### 데이터 카탈로그
