@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "d993c06fd9bfa5ec",
+    "type": "split",
+    "children": [
+      {
+        "id": "b9c97bc9e029b3ca",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3d1ec6fd1a5a38e2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AI Ready Data Module/Framework/기존 5 Framework.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "기존 5 Framework"
+            }
+          },
+          {
+            "id": "d20f2fb73a431f52",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AI Ready Data Module/Framework/기존 5 Framework.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "기존 5 Framework"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d209c5ff16690203",
+    "type": "split",
+    "children": [
+      {
+        "id": "2a2bb889ff151c2f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "27fe07562472df4c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": true
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "83c39448faa053c2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "ac95820df1ea0fc0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8da42a0f31215dc6",
+    "type": "split",
+    "children": [
+      {
+        "id": "d02c3de871be7371",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dd0a5866d1e33115",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "AI Ready Data Module/Framework/기존 5 Framework.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "기존 5 Framework 의 백링크"
+            }
+          },
+          {
+            "id": "b2ea460509d0b40c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "AI Ready Data Module/Framework/기존 5 Framework.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "기존 5 Framework 의 나가는 링크"
+            }
+          },
+          {
+            "id": "a425e642b1b52535",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          },
+          {
+            "id": "978718130f60d5b3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "모든 속성"
+            }
+          },
+          {
+            "id": "a1150aeaa60f3da9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "AI Ready Data Module/Framework/기존 5 Framework.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "기존 5 Framework 의 개요"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false
+    }
+  },
+  "active": "3d1ec6fd1a5a38e2",
+  "lastOpenFiles": [
+    "AI Ready Data Module/Framework/AI 과제 유형화.md",
+    "AI Ready Data Module/Framework/기존 5 Framework.md",
+    "AI Ready Data Module/Framework/Data Lifecycle.md",
+    "AI Ready Data Module/베이스.base",
+    "AI Ready Data Module/무제.canvas",
+    "무제.base",
+    "AI Ready Data Module/Framework",
+    "무제.canvas",
+    "환영합니다!.md",
+    "Pilot Module",
+    "무제/desktop.ini",
+    "AI Ready Data Module",
+    "desktop.ini"
+  ]
+}
