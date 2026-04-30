@@ -78,9 +78,12 @@ function refreshFrameworkOptions(){
   });
 }
 
+function normalizeKey(name=''){ return name.toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
+
 function createTopicChip(label, category='Custom', removable=false) {
   const chip = document.createElement('div');
   chip.className = 'topic-chip';
+  chip.dataset.framework = normalizeKey(category);
   chip.draggable = true;
 
   const text = document.createElement('span');
@@ -112,6 +115,7 @@ function createTopicChip(label, category='Custom', removable=false) {
 function createFrameworkBox(name, topics=[]){
   const box = document.createElement('article');
   box.className = 'framework-box';
+  box.dataset.framework = normalizeKey(name);
 
   const head = document.createElement('div');
   head.className = 'framework-head';
