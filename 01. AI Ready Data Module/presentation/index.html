@@ -10,23 +10,22 @@
   <header class="hero">
     <p class="eyebrow">Interactive Workshop Board</p>
     <h1>14개 주제 매핑 보드</h1>
-    <p>y축: 데이터 라이프사이클(수집→관리→화용), x축: AI 과제 1~4유형. 주제를 드래그해 셀에 배치하고, 복제/추가도 가능합니다.</p>
+    <p>y축: 데이터 라이프사이클(수집→관리→활용), x축: AI 과제 1~4유형. 주제를 드래그해 셀에 배치하고, 복제/추가도 가능합니다.</p>
   </header>
 
   <main>
     <section class="panel">
-      <h2>주제 팔레트 (드래그해서 배치)</h2>
+      <h2>주제 팔레트 (5대 Framework)</h2>
       <div class="toolbar">
         <input id="newTopicInput" type="text" placeholder="추가할 신규 주제 입력" />
         <button id="addTopicBtn" type="button">신규 주제 추가</button>
       </div>
-      <div id="categoryPalette" class="category-palette"></div>
-      <div id="topicPalette" class="topic-palette"></div>
+      <div id="frameworkGroups" class="framework-groups"></div>
       <p class="hint">팁: 토픽을 더블클릭하면 복제됩니다. 셀 안 카드의 ✕ 버튼으로 삭제할 수 있습니다.</p>
     </section>
 
     <section class="panel">
-      <h2>라이프사이클 × AI 과제 유형 매핑</h2>
+      <h2>데이터 라이프사이클 × AI 과제 유형 매핑</h2>
       <div class="matrix-wrap">
         <table class="mapping-table">
           <thead>
@@ -41,24 +40,15 @@
           <tbody>
             <tr>
               <th>수집</th>
-              <td class="dropzone" data-zone="collect-1"></td>
-              <td class="dropzone" data-zone="collect-2"></td>
-              <td class="dropzone" data-zone="collect-3"></td>
-              <td class="dropzone" data-zone="collect-4"></td>
+              <td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td>
             </tr>
             <tr>
               <th>관리</th>
-              <td class="dropzone" data-zone="manage-1"></td>
-              <td class="dropzone" data-zone="manage-2"></td>
-              <td class="dropzone" data-zone="manage-3"></td>
-              <td class="dropzone" data-zone="manage-4"></td>
+              <td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td>
             </tr>
             <tr>
-              <th>화용</th>
-              <td class="dropzone" data-zone="apply-1"></td>
-              <td class="dropzone" data-zone="apply-2"></td>
-              <td class="dropzone" data-zone="apply-3"></td>
-              <td class="dropzone" data-zone="apply-4"></td>
+              <th>활용</th>
+              <td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td>
             </tr>
           </tbody>
         </table>
@@ -67,119 +57,91 @@
   </main>
 
 <script>
-const frameworkTopics = [
-  { category:'Findable', label:'데이터 카탈로그' },
-  { category:'Findable', label:'메타데이터' },
-  { category:'Findable', label:'비즈니스 Glossary' },
-  { category:'Understandable', label:'데이터 전처리' },
-  { category:'Understandable', label:'데이터 해설/주석' },
-  { category:'Understandable', label:'온톨로지' },
-  { category:'Trustworthy', label:'Observability' },
-  { category:'Trustworthy', label:'데이터 품질/권한관리' },
-  { category:'Trustworthy', label:'데이터 계통(Lineage)' },
-  { category:'Governed', label:'데이터 생명주기 관리' },
-  { category:'Governed', label:'데이터 운영관리' },
-  { category:'Governed', label:'데이터 Product화' },
-  { category:'Scaleable', label:'합성데이터 (Synthetic)' },
-  { category:'Scaleable', label:'Physical 데이터' }
-];
+const frameworkMap = {
+  Findable: ['데이터 카탈로그','메타데이터','비즈니스 글로서리'],
+  Understandable: ['데이터 전처리','데이터 해설/주석','온톨로지'],
+  Trustworthy: ['Observability','데이터 품질/권한관리','데이터 계통(Lineage)'],
+  Governed: ['데이터 생명주기 관리','데이터 운영관리','데이터 Product화'],
+  Scaleable: ['합성데이터 (Synthetic)','Physical 데이터']
+};
 
-const frameworkCategories = ['Findable','Understandable','Trustworthy','Governed','Scaleable'];
-
-const categoryPalette = document.getElementById('categoryPalette');
-const topicPalette = document.getElementById('topicPalette');
+const frameworkGroups = document.getElementById('frameworkGroups');
 const addTopicBtn = document.getElementById('addTopicBtn');
 const newTopicInput = document.getElementById('newTopicInput');
 
-function createTopicChip(label, category){
+function createTopicChip(label, category='Custom') {
   const chip = document.createElement('button');
   chip.className = 'topic-chip';
   chip.type = 'button';
   chip.draggable = true;
-  chip.dataset.label = label;
-  chip.dataset.category = category || '';
-  chip.textContent = category ? `${label} · ${category}` : label;
-
+  chip.textContent = label;
   chip.addEventListener('dragstart', (e) => {
-    const payload = category ? `[${category}] ${label}` : label;
-    e.dataTransfer.setData('text/plain', payload);
+    e.dataTransfer.setData('text/plain', `[${category}] ${label}`);
     e.dataTransfer.effectAllowed = 'copy';
   });
-
   chip.addEventListener('dblclick', () => {
-    topicPalette.appendChild(createTopicChip(label, category));
+    const clone = createTopicChip(label, category);
+    const group = chip.closest('.framework-box')?.querySelector('.topic-list');
+    (group || frameworkGroups).appendChild(clone);
   });
-
   return chip;
 }
 
-function createPlacedCard(label){
+function createFrameworkBox(name, topics){
+  const box = document.createElement('article');
+  box.className = 'framework-box';
+
+  const title = document.createElement('h3');
+  title.textContent = name;
+
+  const list = document.createElement('div');
+  list.className = 'topic-list';
+  topics.forEach(t => list.appendChild(createTopicChip(t, name)));
+
+  box.appendChild(title);
+  box.appendChild(list);
+  return box;
+}
+
+function createPlacedCard(text){
   const card = document.createElement('div');
   card.className = 'placed-card';
-
-  const text = document.createElement('span');
-  text.textContent = label;
-
-  const removeBtn = document.createElement('button');
-  removeBtn.type = 'button';
-  removeBtn.className = 'remove-btn';
-  removeBtn.textContent = '✕';
-  removeBtn.addEventListener('click', () => card.remove());
-
-  card.appendChild(text);
-  card.appendChild(removeBtn);
+  const span = document.createElement('span'); span.textContent = text;
+  const btn = document.createElement('button'); btn.className='remove-btn'; btn.type='button'; btn.textContent='✕';
+  btn.addEventListener('click', () => card.remove());
+  card.appendChild(span); card.appendChild(btn);
   return card;
 }
 
-function createCategoryChip(category){
-  const chip = document.createElement('button');
-  chip.className = 'category-chip';
-  chip.type = 'button';
-  chip.draggable = true;
-  chip.textContent = category;
-  chip.addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('text/plain', `[대주제] ${category}`);
-    e.dataTransfer.effectAllowed = 'copy';
-  });
-  chip.addEventListener('dblclick', () => categoryPalette.appendChild(createCategoryChip(category)));
-  return chip;
-}
-
-function initPalette(){
-  frameworkCategories.forEach(c => categoryPalette.appendChild(createCategoryChip(c)));
-  frameworkTopics.forEach(t => topicPalette.appendChild(createTopicChip(t.label, t.category)));
-}
+Object.entries(frameworkMap).forEach(([name, topics]) => {
+  frameworkGroups.appendChild(createFrameworkBox(name, topics));
+});
 
 addTopicBtn.addEventListener('click', () => {
   const value = newTopicInput.value.trim();
-  if(!value) return;
-  topicPalette.appendChild(createTopicChip(value, 'Custom'));
+  if (!value) return;
+  const customBox = frameworkGroups.querySelector('[data-custom]') || (() => {
+    const box = createFrameworkBox('Custom', []);
+    box.dataset.custom = 'true';
+    frameworkGroups.appendChild(box);
+    return box;
+  })();
+  customBox.querySelector('.topic-list').appendChild(createTopicChip(value, 'Custom'));
   newTopicInput.value = '';
-  newTopicInput.focus();
 });
 
-newTopicInput.addEventListener('keydown', (e) => {
-  if(e.key === 'Enter') addTopicBtn.click();
-});
+newTopicInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') addTopicBtn.click(); });
 
-document.querySelectorAll('.dropzone').forEach((zone) => {
-  zone.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    zone.classList.add('is-over');
-  });
-
+document.querySelectorAll('.dropzone').forEach(zone => {
+  zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('is-over'); });
   zone.addEventListener('dragleave', () => zone.classList.remove('is-over'));
-
   zone.addEventListener('drop', (e) => {
     e.preventDefault();
     zone.classList.remove('is-over');
-    const label = e.dataTransfer.getData('text/plain');
-    if(!label) return;
-    zone.appendChild(createPlacedCard(label));
+    const txt = e.dataTransfer.getData('text/plain');
+    if (txt) zone.appendChild(createPlacedCard(txt));
   });
 });
-
-initPalette();
 </script>
 </body>
 </html>
