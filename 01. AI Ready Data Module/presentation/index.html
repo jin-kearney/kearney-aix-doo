@@ -3,66 +3,183 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Ready Data 전략 발표</title>
+  <title>AI 과제 유형화 × 데이터 라이프사이클 매핑 보드</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="hero">
-    <p class="eyebrow">2026 Strategy Brief</p>
-    <h1>AI 과제 유형화 × Data Readiness<br/>실행 중심 발표 페이지</h1>
-    <p>업무/현장, 인사이트/실행 4분면을 기반으로 AI 과제를 정의하고, Findable→Scalable 데이터 프레임워크로 구현하는 실행안.</p>
+    <p class="eyebrow">Interactive Workshop Board</p>
+    <h1>14개 주제 매핑 보드</h1>
+    <p>y축: 데이터 라이프사이클(수집→관리→화용), x축: AI 과제 1~4유형. 주제를 드래그해 셀에 배치하고, 복제/추가도 가능합니다.</p>
   </header>
 
   <main>
-    <section>
-      <h2>왜 지금인가: 최신 리서치 인사이트</h2>
-      <div class="grid two">
-        <article class="card"><h3>확산은 빨라졌지만, 스케일링은 과제</h3><p>McKinsey 2025 보고서는 AI 사용이 광범위해졌지만 파일럿에서 전사 성과로 전환하는 데 여전히 구조적 장애가 있다고 지적합니다.</p></article>
-        <article class="card"><h3>거버넌스와 데이터가 가치 창출의 병목</h3><p>Deloitte 2024 시리즈는 기업의 생성형 AI 전개에서 데이터 품질과 거버넌스·리스크·컴플라이언스를 핵심 성공요인으로 제시합니다.</p></article>
-        <article class="card"><h3>신뢰·리스크 관리의 표준 필요</h3><p>NIST AI RMF 1.0은 신뢰 가능한 AI 운영을 위한 자율적 위험관리 프레임워크를 제공합니다(2023-01-26 공개).</p></article>
-        <article class="card"><h3>보안 실패 비용은 계속 높음</h3><p>IBM 2024 보고서에 따르면 전 세계 데이터 침해 평균 비용은 488만 달러로 최고치였습니다. 데이터·권한·관측성 설계가 필수입니다.</p></article>
+    <section class="panel">
+      <h2>주제 팔레트 (드래그해서 배치)</h2>
+      <div class="toolbar">
+        <input id="newTopicInput" type="text" placeholder="추가할 신규 주제 입력" />
+        <button id="addTopicBtn" type="button">신규 주제 추가</button>
       </div>
+      <div id="categoryPalette" class="category-palette"></div>
+      <div id="topicPalette" class="topic-palette"></div>
+      <p class="hint">팁: 토픽을 더블클릭하면 복제됩니다. 셀 안 카드의 ✕ 버튼으로 삭제할 수 있습니다.</p>
     </section>
 
-    <section>
-      <h2>AI 과제 2×2 프레임</h2>
-      <div class="matrix">
-        <div class="cell"><h3>업무 인사이트형</h3><p>고객/영업/문서 데이터에서 예측·추천·이상탐지</p></div>
-        <div class="cell"><h3>업무 실행형</h3><p>문서 작성·응대·프로세스 자동화 (Copilot)</p></div>
-        <div class="cell"><h3>현장 인사이트형</h3><p>설비/센서/영상 기반 진단·품질 예측·예지보전</p></div>
-        <div class="cell"><h3>현장 실행형</h3><p>로봇/공정/장비 자동 제어, 폐루프 실행</p></div>
+    <section class="panel">
+      <h2>라이프사이클 × AI 과제 유형 매핑</h2>
+      <div class="matrix-wrap">
+        <table class="mapping-table">
+          <thead>
+            <tr>
+              <th>데이터 라이프사이클 \ AI 유형</th>
+              <th>1. 업무 인사이트형</th>
+              <th>2. 업무 실행형</th>
+              <th>3. 현장 인사이트형</th>
+              <th>4. 현장 실행형</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>수집</th>
+              <td class="dropzone" data-zone="collect-1"></td>
+              <td class="dropzone" data-zone="collect-2"></td>
+              <td class="dropzone" data-zone="collect-3"></td>
+              <td class="dropzone" data-zone="collect-4"></td>
+            </tr>
+            <tr>
+              <th>관리</th>
+              <td class="dropzone" data-zone="manage-1"></td>
+              <td class="dropzone" data-zone="manage-2"></td>
+              <td class="dropzone" data-zone="manage-3"></td>
+              <td class="dropzone" data-zone="manage-4"></td>
+            </tr>
+            <tr>
+              <th>화용</th>
+              <td class="dropzone" data-zone="apply-1"></td>
+              <td class="dropzone" data-zone="apply-2"></td>
+              <td class="dropzone" data-zone="apply-3"></td>
+              <td class="dropzone" data-zone="apply-4"></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </section>
-
-    <section>
-      <h2>Data Readiness 5단계</h2>
-      <ol class="timeline">
-        <li><strong>Findable</strong> — 카탈로그/메타데이터/용어 표준화</li>
-        <li><strong>Understandable</strong> — 전처리/주석/온톨로지</li>
-        <li><strong>Trustworthy</strong> — 품질/권한/Lineage/Observability</li>
-        <li><strong>Governed</strong> — 생명주기/운영관리/Data Product화</li>
-        <li><strong>Scalable</strong> — 합성데이터, Physical 데이터 확장</li>
-      </ol>
-    </section>
-
-    <section>
-      <h2>90일 실행 로드맵</h2>
-      <div class="grid three">
-        <article class="card"><h3>0~30일</h3><p>Top 8 유스케이스 2×2 분류, 데이터 자산 진단, 리스크 레지스터 수립</p></article>
-        <article class="card"><h3>31~60일</h3><p>우선 2개 과제 PoC, 품질·권한·라인리지 대시보드 구축, RAG/모델 평가체계 적용</p></article>
-        <article class="card"><h3>61~90일</h3><p>1개 과제 프로덕션 전환, 운영 KPI/비용 KPI/위험 KPI 결합 운영, 전사 확장 계획 확정</p></article>
-      </div>
-    </section>
-
-    <section>
-      <h2>출처</h2>
-      <ul>
-        <li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai/" target="_blank">McKinsey, The State of AI 2025</a></li>
-        <li><a href="https://www2.deloitte.com/us/en/pages/consulting/articles/state-of-generative-ai-in-enterprise.html" target="_blank">Deloitte, State of Generative AI in the Enterprise (2024)</a></li>
-        <li><a href="https://www.nist.gov/news-events/events/2023/01/nist-ai-risk-management-framework-ai-rmf-10-launch" target="_blank">NIST, AI RMF 1.0 Launch (2023-01-26)</a></li>
-        <li><a href="https://www.ibm.com/think/insights/whats-new-2024-cost-of-a-data-breach-report" target="_blank">IBM, Cost of a Data Breach Report 2024</a></li>
-      </ul>
     </section>
   </main>
+
+<script>
+const frameworkTopics = [
+  { category:'Findable', label:'데이터 카탈로그' },
+  { category:'Findable', label:'메타데이터' },
+  { category:'Findable', label:'비즈니스 Glossary' },
+  { category:'Understandable', label:'데이터 전처리' },
+  { category:'Understandable', label:'데이터 해설/주석' },
+  { category:'Understandable', label:'온톨로지' },
+  { category:'Trustworthy', label:'Observability' },
+  { category:'Trustworthy', label:'데이터 품질/권한관리' },
+  { category:'Trustworthy', label:'데이터 계통(Lineage)' },
+  { category:'Governed', label:'데이터 생명주기 관리' },
+  { category:'Governed', label:'데이터 운영관리' },
+  { category:'Governed', label:'데이터 Product화' },
+  { category:'Scaleable', label:'합성데이터 (Synthetic)' },
+  { category:'Scaleable', label:'Physical 데이터' }
+];
+
+const frameworkCategories = ['Findable','Understandable','Trustworthy','Governed','Scaleable'];
+
+const categoryPalette = document.getElementById('categoryPalette');
+const topicPalette = document.getElementById('topicPalette');
+const addTopicBtn = document.getElementById('addTopicBtn');
+const newTopicInput = document.getElementById('newTopicInput');
+
+function createTopicChip(label, category){
+  const chip = document.createElement('button');
+  chip.className = 'topic-chip';
+  chip.type = 'button';
+  chip.draggable = true;
+  chip.dataset.label = label;
+  chip.dataset.category = category || '';
+  chip.textContent = category ? `${label} · ${category}` : label;
+
+  chip.addEventListener('dragstart', (e) => {
+    const payload = category ? `[${category}] ${label}` : label;
+    e.dataTransfer.setData('text/plain', payload);
+    e.dataTransfer.effectAllowed = 'copy';
+  });
+
+  chip.addEventListener('dblclick', () => {
+    topicPalette.appendChild(createTopicChip(label, category));
+  });
+
+  return chip;
+}
+
+function createPlacedCard(label){
+  const card = document.createElement('div');
+  card.className = 'placed-card';
+
+  const text = document.createElement('span');
+  text.textContent = label;
+
+  const removeBtn = document.createElement('button');
+  removeBtn.type = 'button';
+  removeBtn.className = 'remove-btn';
+  removeBtn.textContent = '✕';
+  removeBtn.addEventListener('click', () => card.remove());
+
+  card.appendChild(text);
+  card.appendChild(removeBtn);
+  return card;
+}
+
+function createCategoryChip(category){
+  const chip = document.createElement('button');
+  chip.className = 'category-chip';
+  chip.type = 'button';
+  chip.draggable = true;
+  chip.textContent = category;
+  chip.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', `[대주제] ${category}`);
+    e.dataTransfer.effectAllowed = 'copy';
+  });
+  chip.addEventListener('dblclick', () => categoryPalette.appendChild(createCategoryChip(category)));
+  return chip;
+}
+
+function initPalette(){
+  frameworkCategories.forEach(c => categoryPalette.appendChild(createCategoryChip(c)));
+  frameworkTopics.forEach(t => topicPalette.appendChild(createTopicChip(t.label, t.category)));
+}
+
+addTopicBtn.addEventListener('click', () => {
+  const value = newTopicInput.value.trim();
+  if(!value) return;
+  topicPalette.appendChild(createTopicChip(value, 'Custom'));
+  newTopicInput.value = '';
+  newTopicInput.focus();
+});
+
+newTopicInput.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter') addTopicBtn.click();
+});
+
+document.querySelectorAll('.dropzone').forEach((zone) => {
+  zone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    zone.classList.add('is-over');
+  });
+
+  zone.addEventListener('dragleave', () => zone.classList.remove('is-over'));
+
+  zone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    zone.classList.remove('is-over');
+    const label = e.dataTransfer.getData('text/plain');
+    if(!label) return;
+    zone.appendChild(createPlacedCard(label));
+  });
+});
+
+initPalette();
+</script>
 </body>
 </html>
