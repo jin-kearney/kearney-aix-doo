@@ -100,8 +100,8 @@ function createTopicChip(label, category='Custom', removable=false) {
   }
 
   chip.addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('text/plain', `[${category}] ${label}`);
-    e.dataTransfer.effectAllowed = 'copy';
+    e.dataTransfer.setData('application/json', JSON.stringify({ label, category }));
+    e.dataTransfer.effectAllowed = 'copyMove';
   });
 
   chip.addEventListener('dblclick', () => {
@@ -144,13 +144,32 @@ function createFrameworkBox(name, topics=[]){
   return box;
 }
 
-function createPlacedCard(text){
+function createPlacedCard(label, category='custom'){
   const card = document.createElement('div');
   card.className = 'placed-card';
-  const span = document.createElement('span'); span.textContent = text;
-  const btn = document.createElement('button'); btn.className='remove-btn'; btn.type='button'; btn.textContent='✕';
+  card.draggable = true;
+  card.dataset.framework = normalizeKey(category);
+  card.dataset.label = label;
+  card.dataset.category = category;
+
+  const span = document.createElement('span');
+  span.textContent = `[${category}] ${label}`;
+
+  const btn = document.createElement('button');
+  btn.className='remove-btn';
+  btn.type='button';
+  btn.textContent='✕';
   btn.addEventListener('click', () => card.remove());
-  card.appendChild(span); card.appendChild(btn);
+
+  card.addEventListener('dragstart', (e) => {
+    card.classList.add('dragging');
+    e.dataTransfer.setData('application/json', JSON.stringify({ label: card.dataset.label, category: card.dataset.category, fromPlaced: true }));
+    e.dataTransfer.effectAllowed = 'move';
+  });
+  card.addEventListener('dragend', () => card.classList.remove('dragging'));
+
+  card.appendChild(span);
+  card.appendChild(btn);
   return card;
 }
 
@@ -180,16 +199,55 @@ addTopicBtn.addEventListener('click', () => {
 newTopicInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') addTopicBtn.click(); });
 newFrameworkInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') addFrameworkBtn.click(); });
 
+function getDragAfterElement(zone, y) {
+  const draggableCards = [...zone.querySelectorAll('.placed-card:not(.dragging)')];
+  return draggableCards.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+    if (offset < 0 && offset > closest.offset) {
+      return { offset, element: child };
+    }
+    return closest;
+  }, { offset: Number.NEGATIVE_INFINITY }).element;
+}
+
 document.querySelectorAll('.dropzone').forEach(zone => {
-  zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('is-over'); });
+  zone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    zone.classList.add('is-over');
+    const dragging = document.querySelector('.placed-card.dragging');
+    if (dragging) {
+      const afterElement = getDragAfterElement(zone, e.clientY);
+      if (afterElement == null) zone.appendChild(dragging);
+      else zone.insertBefore(dragging, afterElement);
+    }
+  });
+
   zone.addEventListener('dragleave', () => zone.classList.remove('is-over'));
+
   zone.addEventListener('drop', (e) => {
     e.preventDefault();
     zone.classList.remove('is-over');
-    const txt = e.dataTransfer.getData('text/plain');
-    if (txt) zone.appendChild(createPlacedCard(txt));
+
+    let payload = null;
+    try { payload = JSON.parse(e.dataTransfer.getData('application/json')); } catch { payload = null; }
+    if (!payload) return;
+
+    const dragging = document.querySelector('.placed-card.dragging');
+    if (dragging) {
+      const afterElement = getDragAfterElement(zone, e.clientY);
+      if (afterElement == null) zone.appendChild(dragging);
+      else zone.insertBefore(dragging, afterElement);
+      return;
+    }
+
+    const card = createPlacedCard(payload.label, payload.category || 'Custom');
+    const afterElement = getDragAfterElement(zone, e.clientY);
+    if (afterElement == null) zone.appendChild(card);
+    else zone.insertBefore(card, afterElement);
   });
 });
+
 </script>
 </body>
 </html>

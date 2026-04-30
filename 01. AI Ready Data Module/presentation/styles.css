@@ -26,5 +26,12 @@ main{max-width:1200px;margin:0 auto;padding:0 24px 64px}.panel{background:var(--
 .matrix-wrap{overflow:auto}.mapping-table{width:100%;border-collapse:collapse;min-width:980px;background:#fff}.mapping-table th,.mapping-table td{border:1px solid var(--line);vertical-align:top;padding:10px}.mapping-table small{font-weight:500;color:#3b507f}
 .dropzone{min-height:130px;background:#f8faff}.dropzone.is-over{outline:2px dashed var(--accent);outline-offset:-4px}
 .placed-card{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#edf3ff;border:1px solid #b7c9f3;border-radius:10px;padding:6px 8px;margin-bottom:6px;font-size:.92rem}
+.placed-card[data-framework='findable']{background:#dcebff;border-color:#8bb8ff}
+.placed-card[data-framework='understandable']{background:#dff8ea;border-color:#8dcdab}
+.placed-card[data-framework='trustworthy']{background:#ffe8d8;border-color:#efb084}
+.placed-card[data-framework='governed']{background:#e9e0ff;border-color:#b19bf0}
+.placed-card[data-framework='scaleable']{background:#fff5c9;border-color:#e4c867}
+.placed-card[data-framework='custom']{background:#e8eefc;border-color:#afc2ef}
+.placed-card.dragging{opacity:.55}
 .remove-btn{border:none;background:transparent;color:#9e1f1f;font-size:.95rem}
 @media (max-width:720px){main,.hero{padding-left:14px;padding-right:14px}}
