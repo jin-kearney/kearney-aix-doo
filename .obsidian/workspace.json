@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AI Ready Data Module/Framework/기존 5 Framework.md",
+                "file": "01. AI Ready Data Module/Framework/Data Lifecycle 관점 비교.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "기존 5 Framework 의 백링크"
+              "title": "Data Lifecycle 관점 비교 의 백링크"
             }
           },
           {
@@ -169,8 +169,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,11 +186,13 @@
   "active": "d20f2fb73a431f52",
   "lastOpenFiles": [
     "01. AI Ready Data Module/Framework/기존 5 Framework.md",
+    "01. AI Ready Data Module/research/신규주제추천.md",
+    "01. AI Ready Data Module/research/리서치-요약.md",
+    "research/리서치-요약.md",
+    "research/신규주제추천.md",
+    "01. AI Ready Data Module/Framework/Data Lifecycle 관점 비교.md",
     "01. AI Ready Data Module/Framework/AI 과제 유형화.md",
     "01. AI Ready Data Module/presentation/vercel.json",
-    "01. AI Ready Data Module/Framework/Data Lifecycle 관점 비교.md",
-    "research/신규주제추천.md",
-    "research/리서치-요약.md",
     "research",
     "presentation/styles.css",
     "presentation/index.html",
@@ -199,8 +200,6 @@
     "01. AI Ready Data Module/베이스.base",
     "02. Pilot Module/Pilot.md",
     "01. AI Ready Data Module/무제",
-    "01. AI Ready Data Module/research/신규주제추천.md",
-    "01. AI Ready Data Module/research/리서치-요약.md",
     "01. AI Ready Data Module/research",
     "01. AI Ready Data Module/presentation/styles.css",
     "01. AI Ready Data Module/presentation/index.html",
