@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/3X4 Matrix Full 버전.md",
+                "file": "01. AI Ready Data Module/Framework/기존 5 Framework.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3X4 Matrix Full 버전"
+              "title": "기존 5 Framework"
             }
           }
         ],
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/3X4 Matrix Full 버전.md",
+                "file": "01. AI Ready Data Module/Framework/기존 5 Framework.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "3X4 Matrix Full 버전 의 백링크"
+              "title": "기존 5 Framework 의 백링크"
             }
           },
           {
@@ -256,8 +256,8 @@
   },
   "active": "fa6a49df259a9be7",
   "lastOpenFiles": [
-    "01. AI Ready Data Module/Framework/12개 영역별 요약.md",
     "01. AI Ready Data Module/Framework/3X4 Matrix Full 버전.md",
+    "01. AI Ready Data Module/Framework/12개 영역별 요약.md",
     "01. AI Ready Data Module/Framework/3X4 Matrix별 특징 및 필요 주제.md",
     "01. AI Ready Data Module/Framework/기존 5 Framework.md",
     "01. AI Ready Data Module/Framework/Data Lifecycle 관점 비교.md",
