@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/AI 과제 유형화.md",
+                "file": "01. AI Ready Data Module/일일 Action Item/2026-05-06.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI 과제 유형화"
+              "title": "2026-05-06"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/AI 과제 유형화.md",
+                "file": "01. AI Ready Data Module/일일 Action Item/2026-05-06.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "AI 과제 유형화 의 백링크"
+              "title": "2026-05-06 의 백링크"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/AI 과제 유형화.md",
+                "file": "01. AI Ready Data Module/일일 Action Item/2026-05-06.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "AI 과제 유형화 의 나가는 링크"
+              "title": "2026-05-06 의 나가는 링크"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/AI 과제 유형화.md",
+                "file": "01. AI Ready Data Module/일일 Action Item/2026-05-06.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "AI 과제 유형화 의 개요"
+              "title": "2026-05-06 의 개요"
             }
           }
         ],
@@ -201,20 +201,20 @@
   },
   "active": "b4b12a3ee4758238",
   "lastOpenFiles": [
+    "01. AI Ready Data Module/베이스.base",
+    "01. AI Ready Data Module/일일 Action Item/2026-05-06.md",
+    "01. AI Ready Data Module/Framework/Data Lifecycle 관점 비교.md",
+    "01. AI Ready Data Module/Framework/AI 과제 유형화.md",
     "01. AI Ready Data Module/Framework/3X4 Matrix별 특징 및 필요 주제.md",
     "01. AI Ready Data Module/Framework/12개 영역별 요약.md",
     "01. AI Ready Data Module/Framework/기존 5 Framework.md",
-    "01. AI Ready Data Module/Framework/Data Lifecycle 관점 비교.md",
     "01. AI Ready Data Module/Framework/3X4 Matrix Full 버전.md",
     "01. AI Ready Data Module/Framework/3X4 Matrix.md",
-    "01. AI Ready Data Module/Framework/AI 과제 유형화.md",
     "03. 회의록/초안/0421 두산지주.md",
     "03. 회의록/초안/0424 증평 Workshop.md",
     "03. 회의록/최종본/0506 밥캣 데모 미팅.md",
     "01. AI Ready Data Module/research/리서치-요약.md",
     "01. AI Ready Data Module/research/신규주제추천.md",
-    "01. AI Ready Data Module/2026-05-06.md",
-    "01. AI Ready Data Module/베이스.base",
     "02. Pilot Module/Pilot.md",
     "무제.canvas",
     "03. 회의록/최종본",
