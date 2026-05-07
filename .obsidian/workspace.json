@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/3X4 Matrix.md",
+                "file": "01. AI Ready Data Module/일일 Action Item/2026-05-07.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3X4 Matrix"
+              "title": "2026-05-07"
             }
           }
         ],
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/3X4 Matrix.md",
+                "file": "01. AI Ready Data Module/일일 Action Item/2026-05-07.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "3X4 Matrix 의 개요"
+              "title": "2026-05-07 의 개요"
             }
           }
         ],
@@ -229,6 +229,10 @@
   },
   "active": "16286c53f43774be",
   "lastOpenFiles": [
+    "01. AI Ready Data Module/일일 Action Item/무제.md",
+    "01. AI Ready Data Module/일일 Action Item/2026-05-07.md",
+    "01. AI Ready Data Module/Framework/신규 구조.md",
+    "01. AI Ready Data Module/Framework/3X4 Matrix.md",
     "01. AI Ready Data Module/Framework/3X4 Matrix Full 버전.md",
     "01. AI Ready Data Module/일일 Action Item/2026-05-06.md",
     "01. AI Ready Data Module/Framework/주요 AI 과제 예시.md",
@@ -237,7 +241,6 @@
     "01. AI Ready Data Module/Framework/기존 5 Framework.md",
     "01. AI Ready Data Module/Framework/Data Lifecycle 관점 비교.md",
     "01. AI Ready Data Module/Framework/3X4 Matrix별 특징 및 필요 주제.md",
-    "01. AI Ready Data Module/Framework/3X4 Matrix.md",
     "01. AI Ready Data Module/Framework/12개 영역별 요약.md",
     "01. AI Ready Data Module/Framework/두산전자 문제점",
     "01. AI Ready Data Module/research/신규주제추천.md",
