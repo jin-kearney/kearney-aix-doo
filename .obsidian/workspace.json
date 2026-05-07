@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/두산전자 문제점 KQ.md",
+                "file": "01. AI Ready Data Module/Framework/AI 과제 유형화.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "두산전자 문제점 KQ"
+              "title": "AI 과제 유형화"
             }
           }
         ],
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/두산전자 문제점 KQ.md",
+                "file": "01. AI Ready Data Module/Framework/AI 과제 유형화.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "두산전자 문제점 KQ 의 개요"
+              "title": "AI 과제 유형화 의 개요"
             }
           }
         ],
@@ -215,8 +215,8 @@
   },
   "active": "f7e24a8494260660",
   "lastOpenFiles": [
-    "01. AI Ready Data Module/Framework/기존 5 Framework.md",
     "01. AI Ready Data Module/Framework/두산전자 문제점 KQ.md",
+    "01. AI Ready Data Module/Framework/기존 5 Framework.md",
     "01. AI Ready Data Module/Framework/Data Lifecycle 관점 비교.md",
     "01. AI Ready Data Module/Framework/3X4 Matrix별 특징 및 필요 주제.md",
     "01. AI Ready Data Module/Framework/3X4 Matrix Full 버전.md",
