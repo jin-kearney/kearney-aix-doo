@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
+                "file": "01. AI Ready Data Module/Framework/주제별 백서 구성 및 Key Question 답변 가이드.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "주제별 Level 정의"
+              "title": "주제별 백서 구성 및 Key Question 답변 가이드"
             }
           }
         ],
@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
+                "file": "01. AI Ready Data Module/Framework/주제별 백서 구성 및 Key Question 답변 가이드.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "주제별 Level 정의 의 개요"
+              "title": "주제별 백서 구성 및 Key Question 답변 가이드 의 개요"
             }
           }
         ],
@@ -243,16 +243,16 @@
   },
   "active": "5aefeda09e2890f5",
   "lastOpenFiles": [
+    "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
+    "01. AI Ready Data Module/research/신규주제추천.md",
+    "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
     "01. AI Ready Data Module/Framework/주제별 백서 구성 및 Key Question 답변 가이드.md",
     "01. AI Ready Data Module/Framework/Outdated/무제/desktop.ini",
     "01. AI Ready Data Module/Framework/무제",
-    "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
-    "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
     "01. AI Ready Data Module/Framework/AI 발전 단계별 데이터 주제 정의.md",
     "01. AI Ready Data Module/Framework/AI 데이터 거버넌스 프레임워크 — 주제별 Key Questions.md",
     "01. AI Ready Data Module/베이스.base",
     "01. AI Ready Data Module/research/리서치-요약.md",
-    "01. AI Ready Data Module/research/신규주제추천.md",
     "01. AI Ready Data Module/Framework/현황분석/두산전자 문제점 KQ.md",
     "01. AI Ready Data Module/Framework/기존 5 Framework.md",
     "01. AI Ready Data Module/Framework/Outdated/Data Lifecycle 관점 비교.md",
