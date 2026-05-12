@@ -3,251 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI 과제 유형화 × 데이터 라이프사이클 매핑 보드</title>
+  <title>AI 데이터 거버넌스 프레임워크 - 주제별 백서/Level 디자인</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="hero">
-    <p class="eyebrow">Interactive Workshop Board</p>
-    <h1>14개 주제 매핑 보드</h1>
-    <p>y축: 데이터 라이프사이클(수집→관리→활용), x축: AI 과제 1~4유형. 주제를 드래그해 셀에 배치하고, 복제/추가/삭제가 가능합니다.</p>
+    <p class="eyebrow">AI Ready Data Whitepaper Design</p>
+    <h1>최종 주제 × 주제별 Level 정의 프레젠테이션</h1>
+    <p>주제별 Key Question과 Level 정의를 바탕으로 백서에 담아야 할 핵심 구조를 한 페이지에서 확인할 수 있도록 구성했습니다.</p>
   </header>
 
   <main>
     <section class="panel">
-      <h2>주제 팔레트 (5대 Framework)</h2>
-      <div class="toolbar">
-        <input id="newFrameworkInput" type="text" placeholder="추가할 Framework 이름" />
-        <button id="addFrameworkBtn" type="button">Framework 박스 추가</button>
-      </div>
-      <div class="toolbar">
-        <input id="newTopicInput" type="text" placeholder="추가할 신규 주제 입력" />
-        <select id="frameworkSelect"></select>
-        <button id="addTopicBtn" type="button">신규 주제 추가</button>
-      </div>
-      <div id="frameworkGroups" class="framework-groups"></div>
-      <p class="hint">팁: 토픽 더블클릭 시 복제됩니다. 신규 토픽은 ✕로 삭제 가능합니다.</p>
+      <h2>프레임워크 개요</h2>
+      <div class="pillars" id="pillars"></div>
     </section>
 
     <section class="panel">
-      <h2>데이터 라이프사이클 × AI 과제 유형 매핑</h2>
-      <div class="matrix-wrap">
-        <table class="mapping-table">
-          <thead>
-            <tr>
-              <th>데이터 라이프사이클 \ AI 유형</th>
-              <th>1. 업무 인사이트형<br><small>업무 데이터를 분석해 판단·추천</small></th>
-              <th>2. 업무 실행형<br><small>문서/응대/처리 자동화</small></th>
-              <th>3. 현장 인사이트형<br><small>설비·공정 데이터 진단·예측</small></th>
-              <th>4. 현장 실행형<br><small>설비·로봇 제어와 자동 실행</small></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><th>수집</th><td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td></tr>
-            <tr><th>관리</th><td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td></tr>
-            <tr><th>활용</th><td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td><td class="dropzone"></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <h2>주제별 백서 구성 + Key Question 답변 방향</h2>
+      <p class="hint">각 카드: <strong>백서 핵심 챕터</strong> + <strong>Key Question 답변전략</strong> + <strong>권장 Level</strong></p>
+      <div id="topics" class="topics-grid"></div>
     </section>
   </main>
 
 <script>
-const frameworkMap = {
-  Findable: ['데이터 카탈로그','메타데이터','비즈니스 글로서리'],
-  Understandable: ['데이터 전처리','데이터 해설/주석','온톨로지'],
-  Trustworthy: ['Observability','데이터 품질/권한관리','데이터 계통(Lineage)'],
-  Governed: ['데이터 생명주기 관리','데이터 운영관리','데이터 Product화'],
-  Scaleable: ['합성데이터 (Synthetic)','Physical 데이터']
-};
+const data = [
+  { pillar:'Findable', topic:'데이터 카탈로그', level:'L2-L4', chapters:['통합 카탈로그 아키텍처','AI 검색/연결 API·인덱스','자동 등록·동기화'], answers:['분산데이터 자동 스캔·등록','시맨틱 검색으로 자동 탐색','드리프트 감지 기반 최신성 유지'] },
+  { pillar:'Findable', topic:'메타데이터', level:'L2-L4', chapters:['3계층 메타데이터 모델','AI Readable Schema','자동 추출·갱신'], answers:['의미/맥락 표준 템플릿화','LLM 이해형 설명/제약 제공','변경 감지 워크플로우 자동화'] },
+  { pillar:'Findable', topic:'비즈니스 Glossary', level:'L2-L3', chapters:['용어 표준화 프로세스','Glossary-자산 연결','변경 승인 거버넌스'], answers:['부서별 용어 충돌 정렬','RAG/프롬프트 컨텍스트 연계','버전·승인 체계로 일관성 관리'] },
+  { pillar:'Understandable', topic:'데이터 전처리', level:'L2-L4', chapters:['비정형 변환 전략','클렌징 규칙 라이브러리','회귀테스트·SLA'], answers:['PDF/이미지/표 구조화','결측/중복/오류 룰 기반 처리','원천변경에도 품질 안정화'] },
+  { pillar:'Understandable', topic:'데이터 해설/주석', level:'L2-L4', chapters:['라벨링 가이드라인','LLM+HITL 파이프라인','IAA·Golden set'], answers:['대량 주석 효율화','해석 일관성 정량관리','자동주석 검증 범위 최적화'] },
+  { pillar:'Understandable', topic:'온톨로지', level:'L3-L4', chapters:['개념·관계 모델','Knowledge Graph','진화 거버넌스'], answers:['비즈니스 지식 구조화','개념 관계 기반 이해 강화','버전관리로 지속 업데이트'] },
+  { pillar:'Trustworthy', topic:'Observability', level:'L2-L4', chapters:['관측지표 체계','자동 이상탐지','RCA 플레이북'], answers:['문제 단계 즉시 탐지','무인 이상감지 자동화','데이터/모델 원인 분리'] },
+  { pillar:'Trustworthy', topic:'데이터 품질/권한 관리', level:'L2-L4', chapters:['품질 규칙·측정','적격성 체크리스트','RBAC/ABAC 정책'], answers:['부적합 데이터 사전 차단','목적/역할 기반 세밀 통제','품질 대시보드 자동관리'] },
+  { pillar:'Trustworthy', topic:'데이터 계통(Lineage)', level:'L2-L4', chapters:['라인리지 수준 정의','표준 기반 자동수집','감사 리포팅'], answers:['문제 원천 역추적','변환/조합 자동기록','규제 대응 즉시 증빙'] },
+  { pillar:'Governed', topic:'데이터 운영관리', level:'L2-L4', chapters:['DataOps 모델','오케스트레이션','CI/CD for Data'], answers:['수집-제공 E2E 자동화','장애 복구·영향 최소화','멀티팀 협업 표준화'] },
+  { pillar:'Governed', topic:'데이터 생명주기 관리', level:'L2-L4', chapters:['Retention 정책','법적 보존 매핑','자동 이관·폐기'], answers:['폐기/이관 자동 식별','보존 의무 자동 분류','저장비용 정책 통제'] },
+  { pillar:'Governed', topic:'데이터 디지털화', level:'L1-L3', chapters:['대상 우선순위','OCR/VLM 파이프라인','현장 Digital-First'], answers:['수기·종이 데이터 전환','오류·누락 검증 체계화','처음부터 디지털 생성'] },
+  { pillar:'Governed', topic:'데이터 보안(민감정보 마스킹)', level:'L2-L4', chapters:['민감정보 자동탐지','마스킹 기법 카탈로그','재식별 위험평가'], answers:['비정형 PII 자동 탐지','성능-프라이버시 균형','목적별 차등 마스킹'] },
+  { pillar:'Evolvable', topic:'데이터 Product화', level:'L2-L4', chapters:['Data Product 캔버스','셀프서비스 플랫폼','Data Contract'], answers:['요청 없는 셀프서비스','SLA/책임자 명확화','재사용 중심 공유체계'] },
+  { pillar:'Evolvable', topic:'합성데이터', level:'L3-L4', chapters:['활용 시나리오','Fidelity/Privacy 평가','편향 통제'], answers:['데이터 부족/제한 보완','실데이터 패턴 반영 검증','편향/과적합 방지'] },
+  { pillar:'Evolvable', topic:'AI 평가 데이터', level:'L3-L4', chapters:['평가 차원 정의','Golden Dataset','Continuous Eval'], answers:['평가기준/정답 체계화','전문가 판단 데이터화','업데이트 시 지속 갱신'] },
+  { pillar:'Evolvable', topic:'Feedback Loop', level:'L3-L4', chapters:['Telemetry 스키마','Feedback→Training','A/B 개선'], answers:['운영결과 자동수집','재학습·프롬프트 반영','주기·자동화 최적 설계'] },
+  { pillar:'Actionable', topic:'Physical 데이터', level:'L2-L4', chapters:['센서/설비 인벤토리','실시간 수집 아키텍처','Stream vs Batch'], answers:['현장데이터 실시간 연계','노이즈/누락 정제','처리 방식 기준 분기'] },
+  { pillar:'Actionable', topic:'API/Tool 연계 데이터', level:'L2-L4', chapters:['Tool 분류/스키마','MCP Registry','Call history 자산화'], answers:['입출력 표준화','공통 프로토콜 운영','호출 이력 데이터 자산화'] },
+  { pillar:'Actionable', topic:'Prompt/Harness 자산화', level:'L2-L4', chapters:['SOP→Prompt 구조화','버전·회귀 테스트','Harness 표준화'], answers:['업무판단 프롬프트화','재사용 가능한 자산화','성능저하 탐지·개선'] }
+];
 
-const frameworkGroups = document.getElementById('frameworkGroups');
-const frameworkSelect = document.getElementById('frameworkSelect');
-const addTopicBtn = document.getElementById('addTopicBtn');
-const addFrameworkBtn = document.getElementById('addFrameworkBtn');
-const newTopicInput = document.getElementById('newTopicInput');
-const newFrameworkInput = document.getElementById('newFrameworkInput');
+const palette = {Findable:'#0c4da2',Understandable:'#1f7a46',Trustworthy:'#a45113',Governed:'#5d3da6',Evolvable:'#2f5f8f',Actionable:'#8f6a00'};
 
-function refreshFrameworkOptions(){
-  frameworkSelect.innerHTML = '';
-  [...frameworkGroups.querySelectorAll('.framework-box h3')].forEach((h3) => {
-    const opt = document.createElement('option');
-    opt.value = h3.textContent;
-    opt.textContent = h3.textContent;
-    frameworkSelect.appendChild(opt);
-  });
-}
-
-function normalizeKey(name=''){ return name.toLowerCase().replace(/[^a-z0-9]+/g,'-'); }
-
-function createTopicChip(label, category='Custom', removable=false) {
-  const chip = document.createElement('div');
-  chip.className = 'topic-chip';
-  chip.dataset.framework = normalizeKey(category);
-  chip.draggable = true;
-
-  const text = document.createElement('span');
-  text.textContent = label;
-  chip.appendChild(text);
-
-  if (removable) {
-    const remove = document.createElement('button');
-    remove.type = 'button';
-    remove.className = 'chip-remove';
-    remove.textContent = '✕';
-    remove.addEventListener('click', (e) => { e.stopPropagation(); chip.remove(); });
-    chip.appendChild(remove);
-  }
-
-  chip.addEventListener('dragstart', (e) => {
-    e.dataTransfer.setData('application/json', JSON.stringify({ label, category }));
-    e.dataTransfer.effectAllowed = 'copyMove';
-  });
-
-  chip.addEventListener('dblclick', () => {
-    const clone = createTopicChip(label, category, removable);
-    const group = chip.closest('.framework-box')?.querySelector('.topic-list');
-    (group || frameworkGroups).appendChild(clone);
-  });
-  return chip;
-}
-
-function createFrameworkBox(name, topics=[]){
-  const box = document.createElement('article');
-  box.className = 'framework-box';
-  box.dataset.framework = normalizeKey(name);
-
-  const head = document.createElement('div');
-  head.className = 'framework-head';
-
-  const title = document.createElement('h3');
-  title.textContent = name;
-
-  const del = document.createElement('button');
-  del.type = 'button';
-  del.className = 'framework-remove';
-  del.textContent = '박스 삭제';
-  del.addEventListener('click', () => {
-    box.remove();
-    refreshFrameworkOptions();
-  });
-
-  head.appendChild(title);
-  head.appendChild(del);
-
-  const list = document.createElement('div');
-  list.className = 'topic-list';
-  topics.forEach(t => list.appendChild(createTopicChip(t, name, false)));
-
-  box.appendChild(head);
-  box.appendChild(list);
-  return box;
-}
-
-function createPlacedCard(label, category='custom'){
-  const card = document.createElement('div');
-  card.className = 'placed-card';
-  card.draggable = true;
-  card.dataset.framework = normalizeKey(category);
-  card.dataset.label = label;
-  card.dataset.category = category;
-
-  const span = document.createElement('span');
-  span.textContent = `[${category}] ${label}`;
-
-  const btn = document.createElement('button');
-  btn.className='remove-btn';
-  btn.type='button';
-  btn.textContent='✕';
-  btn.addEventListener('click', () => card.remove());
-
-  card.addEventListener('dragstart', (e) => {
-    card.classList.add('dragging');
-    e.dataTransfer.setData('application/json', JSON.stringify({ label: card.dataset.label, category: card.dataset.category, fromPlaced: true }));
-    e.dataTransfer.effectAllowed = 'move';
-  });
-  card.addEventListener('dragend', () => card.classList.remove('dragging'));
-
-  card.appendChild(span);
-  card.appendChild(btn);
-  return card;
-}
-
-Object.entries(frameworkMap).forEach(([name, topics]) => frameworkGroups.appendChild(createFrameworkBox(name, topics)));
-refreshFrameworkOptions();
-
-addFrameworkBtn.addEventListener('click', () => {
-  const name = newFrameworkInput.value.trim();
-  if (!name) return;
-  const exists = [...frameworkGroups.querySelectorAll('.framework-box h3')].some(h => h.textContent === name);
-  if (exists) return;
-  frameworkGroups.appendChild(createFrameworkBox(name, []));
-  newFrameworkInput.value = '';
-  refreshFrameworkOptions();
+const pillars = [...new Set(data.map(d => d.pillar))];
+const pillarWrap = document.getElementById('pillars');
+pillars.forEach(p => {
+  const el = document.createElement('div');
+  el.className = 'pillar';
+  el.style.borderColor = palette[p];
+  el.innerHTML = `<strong>${p}</strong><span>${data.filter(d=>d.pillar===p).length}개 주제</span>`;
+  pillarWrap.appendChild(el);
 });
 
-addTopicBtn.addEventListener('click', () => {
-  const value = newTopicInput.value.trim();
-  const targetFramework = frameworkSelect.value;
-  if (!value || !targetFramework) return;
-  const box = [...frameworkGroups.querySelectorAll('.framework-box')].find(b => b.querySelector('h3').textContent === targetFramework);
-  if (!box) return;
-  box.querySelector('.topic-list').appendChild(createTopicChip(value, targetFramework, true));
-  newTopicInput.value = '';
+const topics = document.getElementById('topics');
+data.forEach(d => {
+  const card = document.createElement('article');
+  card.className = 'topic-card';
+  card.style.borderTop = `5px solid ${palette[d.pillar]}`;
+  card.innerHTML = `
+    <div class="meta"><span class="tag">${d.pillar}</span><span class="level">${d.level}</span></div>
+    <h3>${d.topic}</h3>
+    <h4>백서 핵심 챕터</h4>
+    <ul>${d.chapters.map(v=>`<li>${v}</li>`).join('')}</ul>
+    <h4>Key Question 답변 방향</h4>
+    <ul>${d.answers.map(v=>`<li>${v}</li>`).join('')}</ul>
+  `;
+  topics.appendChild(card);
 });
-
-newTopicInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') addTopicBtn.click(); });
-newFrameworkInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') addFrameworkBtn.click(); });
-
-function getDragAfterElement(zone, y) {
-  const draggableCards = [...zone.querySelectorAll('.placed-card:not(.dragging)')];
-  return draggableCards.reduce((closest, child) => {
-    const box = child.getBoundingClientRect();
-    const offset = y - box.top - box.height / 2;
-    if (offset < 0 && offset > closest.offset) {
-      return { offset, element: child };
-    }
-    return closest;
-  }, { offset: Number.NEGATIVE_INFINITY }).element;
-}
-
-document.querySelectorAll('.dropzone').forEach(zone => {
-  zone.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    zone.classList.add('is-over');
-    const dragging = document.querySelector('.placed-card.dragging');
-    if (dragging) {
-      const afterElement = getDragAfterElement(zone, e.clientY);
-      if (afterElement == null) zone.appendChild(dragging);
-      else zone.insertBefore(dragging, afterElement);
-    }
-  });
-
-  zone.addEventListener('dragleave', () => zone.classList.remove('is-over'));
-
-  zone.addEventListener('drop', (e) => {
-    e.preventDefault();
-    zone.classList.remove('is-over');
-
-    let payload = null;
-    try { payload = JSON.parse(e.dataTransfer.getData('application/json')); } catch { payload = null; }
-    if (!payload) return;
-
-    const dragging = document.querySelector('.placed-card.dragging');
-    if (dragging) {
-      const afterElement = getDragAfterElement(zone, e.clientY);
-      if (afterElement == null) zone.appendChild(dragging);
-      else zone.insertBefore(dragging, afterElement);
-      return;
-    }
-
-    const card = createPlacedCard(payload.label, payload.category || 'Custom');
-    const afterElement = getDragAfterElement(zone, e.clientY);
-    if (afterElement == null) zone.appendChild(card);
-    else zone.insertBefore(card, afterElement);
-  });
-});
-
 </script>
 </body>
 </html>
