@@ -69,7 +69,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/주제별 Level 정의.md",
+                "file": "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
                 "mode": "source",
                 "source": false
               },
@@ -213,7 +213,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/주제별 Level 정의.md",
+                "file": "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -243,11 +243,12 @@
   },
   "active": "5aefeda09e2890f5",
   "lastOpenFiles": [
-    "01. AI Ready Data Module/Framework/AI 데이터 거버넌스 프레임워크 — 주제별 Key Questions.md",
-    "01. AI Ready Data Module/주제별 Level 정의.md",
     "01. AI Ready Data Module/Framework/기존 5 Framework.md",
-    "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
     "01. AI Ready Data Module/Framework/AI 발전 단계별 데이터 주제 정의.md",
+    "01. AI Ready Data Module/Framework/AI 데이터 거버넌스 프레임워크 — 주제별 Key Questions.md",
+    "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
+    "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
+    "01. AI Ready Data Module/research/신규주제추천.md",
     "01. AI Ready Data Module/Framework/Outdated/Data Lifecycle 관점 비교.md",
     "01. AI Ready Data Module/Framework/Outdated/주요 AI 과제 예시.md",
     "01. AI Ready Data Module/Framework/현황분석/두산전자 문제점 KQ.md",
@@ -264,7 +265,6 @@
     "01. AI Ready Data Module/일일 Action Item/2026-05-06.md",
     "01. AI Ready Data Module/Framework/Outdated/3X4 Matrix별 특징 및 필요 주제.md",
     "01. AI Ready Data Module/Framework/두산전자 문제점",
-    "01. AI Ready Data Module/research/신규주제추천.md",
     "01. AI Ready Data Module/베이스.base",
     "03. 회의록/초안/0421 두산지주.md",
     "03. 회의록/최종본/0506 밥캣 데모 미팅.md",
