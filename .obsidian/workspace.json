@@ -69,16 +69,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
+                "file": "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "주제별 Level 정의"
+              "title": "최종 구조 및 주제"
+            }
+          },
+          {
+            "id": "3c6e1ab1fc547173",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01. AI Ready Data Module/일일 Action Item/2026-05-12.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-05-12"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -213,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
+                "file": "01. AI Ready Data Module/일일 Action Item/2026-05-12.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "주제별 Level 정의 의 개요"
+              "title": "2026-05-12 의 개요"
             }
           }
         ],
@@ -241,13 +255,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5aefeda09e2890f5",
+  "active": "3c6e1ab1fc547173",
   "lastOpenFiles": [
+    "01. AI Ready Data Module/Framework/0512 AI-Ready Data Framework.md",
+    "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
+    "01. AI Ready Data Module/일일 Action Item/2026-05-12.md",
+    "01. AI Ready Data Module/일일 Action Item/2026-05-06.md",
+    "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
     "01. AI Ready Data Module/Framework/기존 5 Framework.md",
     "01. AI Ready Data Module/Framework/주제별 백서 구성 및 Key Question 답변 가이드.md",
-    "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
     "01. AI Ready Data Module/Framework/20개 주제 MECE 재정비 - 주제별 고유 내용 정의.md",
-    "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
     "01. AI Ready Data Module/research/신규주제추천.md",
     "01. AI Ready Data Module/Framework/Outdated/무제/desktop.ini",
     "01. AI Ready Data Module/Framework/무제",
@@ -268,7 +285,6 @@
     "03. 회의록/초안/0424 증평 Workshop.md",
     "01. AI Ready Data Module/일일 Action Item/무제.md",
     "01. AI Ready Data Module/Framework/Outdated/3X4 Matrix Full 버전.md",
-    "01. AI Ready Data Module/일일 Action Item/2026-05-06.md",
     "01. AI Ready Data Module/Framework/Outdated/3X4 Matrix별 특징 및 필요 주제.md",
     "01. AI Ready Data Module/Framework/두산전자 문제점",
     "03. 회의록/초안/0421 두산지주.md",
@@ -278,8 +294,6 @@
     "03. 회의록/최종본",
     "03. 회의록/작성본",
     "03. 회의록/초안",
-    "research/신규주제추천.md",
-    "research/리서치-요약.md",
     "AI Ready Data Module/무제.canvas"
   ]
 }
