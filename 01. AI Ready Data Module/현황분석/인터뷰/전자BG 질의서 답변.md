@@ -18,4 +18,4 @@ AI/Data 과제 수행에 필요한 데이터는 어떤 방식으로 확보하셨
 Silo 된 Legacy System으로 인해 수기 관리하고 있는 Data 다수 존재
 정형/비정형 데이터 혼합 존재 (공정 Data, 조치보고서 등)
 데이터 Loading 시 장시간 소요
-<img width="736" height="245" alt="image" src="https://github.com/user-attachments/assets/868eea84-efc7-4990-bf01-f559ace6a5ac" />
+
