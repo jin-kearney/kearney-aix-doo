@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
+                "file": "01. AI Ready Data Module/Framework/현황분석/두산전자 문제점 KQ.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "최종 구조 및 주제"
+              "title": "두산전자 문제점 KQ"
             }
           }
         ],
@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
+                "file": "01. AI Ready Data Module/Framework/현황분석/두산전자 문제점 KQ.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "최종 구조 및 주제 의 개요"
+              "title": "두산전자 문제점 KQ 의 개요"
             }
           }
         ],
@@ -243,8 +243,8 @@
   },
   "active": "5aefeda09e2890f5",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
+    "conflict-files-obsidian-git.md",
     "01. AI Ready Data Module/현황분석/사전질의서/두산전자 BG.md",
     "01. AI Ready Data Module/현황분석/사전질의서/두산 테스나.md",
     "01. AI Ready Data Module/현황분석/사전질의서/두산 DDI.md",
