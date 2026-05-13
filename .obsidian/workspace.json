@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/현황분석/인터뷰/인터뷰 준비.md",
+                "file": "01. AI Ready Data Module/현황분석/사전질의서/두산 VCC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "인터뷰 준비"
+              "title": "두산 VCC"
             }
           }
         ],
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/현황분석/인터뷰/인터뷰 준비.md",
+                "file": "01. AI Ready Data Module/현황분석/사전질의서/두산 VCC.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "인터뷰 준비 의 개요"
+              "title": "두산 VCC 의 개요"
             }
           }
         ],
@@ -257,8 +257,12 @@
   },
   "active": "3c6e1ab1fc547173",
   "lastOpenFiles": [
+    "01. AI Ready Data Module/현황분석/사전질의서/두산 테스나.md",
+    "01. AI Ready Data Module/현황분석/사전질의서/두산 VCC.md",
+    "01. AI Ready Data Module/현황분석/사전질의서/두산 DDI.md",
+    "01. AI Ready Data Module/현황분석/사전질의서/두산전자 BG.md",
     "01. AI Ready Data Module/일일 Action Item/2026-05-13.md",
-    "01. AI Ready Data Module/현황분석/인터뷰/인터뷰 준비.md",
+    "01. AI Ready Data Module/현황분석/인터뷰/계열사 인터뷰 Timeline.md",
     "01. AI Ready Data Module/현황분석/인터뷰/desktop.ini",
     "01. AI Ready Data Module/현황분석/사전질의서",
     "01. AI Ready Data Module/현황분석/인터뷰",
@@ -289,10 +293,6 @@
     "01. AI Ready Data Module/Framework/Outdated/AI 과제 유형화.md",
     "01. AI Ready Data Module/Framework/Outdated/12개 영역별 요약.md",
     "03. 회의록/초안/0424 증평 Workshop.md",
-    "01. AI Ready Data Module/일일 Action Item/무제.md",
-    "01. AI Ready Data Module/Framework/Outdated/3X4 Matrix Full 버전.md",
-    "01. AI Ready Data Module/Framework/Outdated/3X4 Matrix별 특징 및 필요 주제.md",
-    "03. 회의록/초안/0421 두산지주.md",
     "무제.canvas",
     "AI Ready Data Module/무제.canvas"
   ]
