@@ -76,14 +76,14 @@ AI Ready Data 20개 주제는 단순히 기능 목록을 나열한 것이 아니
 20개 주제는 모두 AI Ready Data 체계의 일부지만, AI 유형별로 우선순위는 다르다.  
 따라서 계열사는 자사의 AI 추진 방향에 따라 먼저 집중해야 할 주제를 판단할 수 있어야 한다.
 
-|AI 유형 / 추진 방향|우선적으로 중요한 AI Ready Data 주제|
-|---|---|
-|**문서 기반 RAG / 지식 검색**|**A1 카탈로그, A2 메타데이터, A3 Glossary, B1 전처리, B3 온톨로지, C3 Lineage, F4 보안/마스킹**|
-|**업무 자동화 Agent**|**F2 API/Tool 데이터, F3 Prompt/Harness, C2 품질/권한, C3 Lineage, E3 평가 데이터, E4 Feedback Loop, F4 보안/마스킹**|
-|**품질 원인 분석 Agent**|**A1 카탈로그, A3 Glossary, B2 주석, B3 온톨로지, C2 품질/권한, C3 Lineage, E3 평가 데이터, F3 Prompt/Harness**|
-|**현장·설비 예측 AI**|**F1 Physical 데이터, C1 Observability, C2 품질/권한, D1 운영관리, E4 Feedback Loop**|
-|**AI 학습 데이터 구축**|**B1 전처리, B2 해설/주석, C2 품질/권한, E2 합성데이터, E3 평가 데이터, F4 보안/마스킹**|
-|**전사 데이터 기반 구축**|**A1 카탈로그, A2 메타데이터, A3 Glossary, C2 품질/권한, D1 운영관리, D2 생명주기 관리**|
+| AI 유형 / 추진 방향         | 우선적으로 중요한 AI Ready Data 주제                                                                           |
+| --------------------- | ---------------------------------------------------------------------------------------------------- |
+| **문서 기반 RAG / 지식 검색** | **A1 카탈로그, A2 메타데이터, A3 Glossary, B1 전처리, B3 온톨로지, C3 Lineage, F4 보안/마스킹**                           |
+| **업무 자동화 Agent**      | **F2 API/Tool 데이터, F3 Prompt/Harness, C2 품질/권한, C3 Lineage, E3 평가 데이터, E4 Feedback Loop, F4 보안/마스킹** |
+| **품질 원인 분석 Agent**    | **A1 카탈로그, A3 Glossary, B2 주석, B3 온톨로지, C2 품질/권한, C3 Lineage, E3 평가 데이터, F3 Prompt/Harness**         |
+| **현장·설비 예측 AI**       | **F1 Physical 데이터, C1 Observability, C2 품질/권한, D1 운영관리, E4 Feedback Loop**                           |
+| **AI 학습 데이터 구축**      | **B1 전처리, B2 해설/주석, C2 품질/권한, E2 합성데이터, E3 평가 데이터, F4 보안/마스킹**                                       |
+| **전사 데이터 기반 구축**      | **A1 카탈로그, A2 메타데이터, A3 Glossary, C2 품질/권한, D1 운영관리, D2 생명주기 관리**                                    |
 
 핵심 메시지는 다음과 같다.
 
