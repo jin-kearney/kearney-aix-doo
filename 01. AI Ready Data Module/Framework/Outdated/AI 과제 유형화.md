@@ -1,3 +1,7 @@
+---
+tags: [vault, 01-ai-ready-data-module, framework, outdated]
+---
+
 # AI 과제 유형화
 
 |                                                | Insight AI<br>판단, 예측, 분류, 추천                                                                                          | Action AI<br>생성, 처리, 실행, 제어                                                                                             |
@@ -30,3 +34,6 @@
 
 ## 과제 예시
 
+## Backlinks
+- [[12개 영역별 요약]]
+- [[3X4 Matrix별 특징 및 필요 주제]]

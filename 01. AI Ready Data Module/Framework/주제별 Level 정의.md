@@ -1,3 +1,7 @@
+---
+tags: [vault, 01-ai-ready-data-module, framework]
+---
+
 ### Pillar 1. Findable
 
 #### 1-1. 데이터 카탈로그
@@ -407,3 +411,6 @@
 - 3장. Prompt 버전 관리 시스템 (Git, PromptLayer, LangSmith)
 - 4장. Prompt 성능 회귀 테스트 및 모니터링
 - 5장. Harness 표준화 (Agent Framework, Tool 연결, 메모리 관리)
+
+## Backlinks
+- [[주제별 백서 구성 및 Key Question 답변 가이드]]
