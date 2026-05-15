@@ -1,3 +1,7 @@
+---
+tags: [vault, 01-ai-ready-data-module, framework]
+---
+
 ### MECE 재정비 
 
 #### Pillar 1. Findable — "AI가 데이터를 찾을 수 있는가"

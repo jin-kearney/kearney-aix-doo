@@ -1,3 +1,7 @@
+---
+tags: [vault, 01-ai-ready-data-module, framework, outdated]
+---
+
 [[3X4 Matrix Full 버전]]
 
 
@@ -80,3 +84,9 @@
 |Knowledge Assistant에 특히 중요|데이터 해설 / 주석, 문서 데이터 관리, Vector Index / RAG 데이터 관리, 데이터 버전 관리|
 |Process Automator에 특히 중요|데이터 Lineage, 데이터 Observability, 데이터 운영 관리, 합성데이터|
 |Physical Optimizer에 특히 중요|Physical 데이터, 데이터 Observability, Feature 관리, 합성데이터|
+
+## Related Documents
+- [[3X4 Matrix Full 버전]]
+
+## Backlinks
+- [[2026-05-06]]

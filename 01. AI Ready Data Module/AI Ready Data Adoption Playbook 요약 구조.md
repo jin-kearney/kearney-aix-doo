@@ -1,3 +1,7 @@
+---
+tags: [vault, 01-ai-ready-data-module]
+---
+
 ## 전체 스토리라인
 
 AI Ready Data Adoption Playbook은 계열사의 AI 활용 확대에 필요한 데이터 준비 체계를 정의하고, 이를 실행·운영 조직과 거버넌스로 연결하는 실무형 가이드다.
@@ -156,3 +160,9 @@ AI Ready Data 20개 주제는 단순히 기능 목록을 나열한 것이 아니
 # 최종 요약 문장
 
 > **AI Ready Data Adoption Playbook은 Top-down으로 데이터 생애주기와 AI 시대 변화에서 필요한 주제를 도출하고, Bottom-up으로 계열사의 데이터 Pain Point를 유형화해 20개 주제와 매핑한 뒤, 이를 주제별 Canvas와 DE팀 중심 Governance로 실행·운영하는 가이드다.**
+
+## Related Documents
+- [[Pilot]]
+
+## Backlinks
+- [[2026-05-13]]

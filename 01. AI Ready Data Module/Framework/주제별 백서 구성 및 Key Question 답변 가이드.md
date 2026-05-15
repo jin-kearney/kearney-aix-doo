@@ -1,3 +1,7 @@
+---
+tags: [vault, 01-ai-ready-data-module, framework]
+---
+
 # AI 데이터 거버넌스 프레임워크: 주제별 백서 구성 및 Key Question 답변 가이드
 
 본 문서는 아래 두 파일만을 근거로, 각 주제별로 **백서에 담아야 할 핵심 내용**과 **Key Question에 대해 제시 가능한 답변 방향**을 정리한 실행 가이드입니다.
@@ -262,3 +266,7 @@
 6. KPI/SLA 및 성과 측정
 7. 단계별 도입 로드맵(Level 1→Level N)
 8. 리스크·통제·거버넌스
+
+## Related Documents
+- [[AI 데이터 거버넌스 프레임워크 — 주제별 Key Questions]]
+- [[주제별 Level 정의]]

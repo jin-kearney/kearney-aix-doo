@@ -1,3 +1,7 @@
+---
+tags: [vault, 01-ai-ready-data-module, framework, outdated]
+---
+
 
 # 1. 기존 5 Framework 14개 주제
 [[기존 5 Framework]]
@@ -133,3 +137,9 @@
 > 기존 5 Framework의 14개 주제를 실행 관점에서 15개로 세분화하고,  
 > Data Lifecycle 관점에서 16개 주제를 추가하여  
 > 총 31개 실행 주제로 확장한다.
+
+## Related Documents
+- [[기존 5 Framework]]
+
+## Backlinks
+- [[최종 구조 및 주제]]

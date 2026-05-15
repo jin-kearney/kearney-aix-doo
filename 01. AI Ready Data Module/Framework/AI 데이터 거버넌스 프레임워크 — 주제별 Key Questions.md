@@ -1,3 +1,7 @@
+---
+tags: [vault, 01-ai-ready-data-module, framework]
+---
+
 ### Pillar 1. Findable
 
 **데이터 카탈로그**
@@ -139,3 +143,6 @@
 - 사람의 업무 방식과 판단 기준을 Agent가 실행할 수 있는 Prompt 형태로 어떻게 구조화할 것인가?
 - 잘 작동하는 Prompt를 버전으로 관리하고 조직 전체가 재사용할 수 있도록 어떻게 자산화할 것인가?
 - Prompt 성능 저하나 업무 변경이 생겼을 때 어떻게 빠르게 탐지하고 개선할 것인가?
+
+## Backlinks
+- [[주제별 백서 구성 및 Key Question 답변 가이드]]
