@@ -1,5 +1,8 @@
 ---
-tags: [vault, 01-ai-ready-data-module, framework]
+tags:
+  - vault
+  - 01-ai-ready-data-module
+  - framework
 ---
 
 # AI 데이터 거버넌스 프레임워크: 주제별 백서 구성 및 Key Question 답변 가이드
