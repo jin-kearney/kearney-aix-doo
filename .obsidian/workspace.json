@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/현황분석/인터뷰 준비/계열사 인터뷰 Timeline.md",
+                "file": "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "계열사 인터뷰 Timeline"
+              "title": "최종 구조 및 주제"
             }
           }
         ],
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/현황분석/인터뷰 준비/계열사 인터뷰 Timeline.md",
+                "file": "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "계열사 인터뷰 Timeline 의 개요"
+              "title": "최종 구조 및 주제 의 개요"
             }
           }
         ],
@@ -201,8 +201,13 @@
   },
   "active": "b4b12a3ee4758238",
   "lastOpenFiles": [
-    "01. AI Ready Data Module/현황분석/사전질의서/DDI 질의서 답변.md",
+    "01. AI Ready Data Module/AI Ready Data Adoption Playbook 요약 구조.md",
+    "01. AI Ready Data Module/Framework/0512 AI-Ready Data Framework.md",
+    "01. AI Ready Data Module/Framework/현황분석/두산전자 문제점 KQ.md",
     "01. AI Ready Data Module/현황분석/사전질의서/에너빌리티추가답변.md",
+    "01. AI Ready Data Module/현황분석/사전질의서/에너빌리티 답변.md",
+    "01. AI Ready Data Module/현황분석/사전질의서/DDI 질의서 답변.md",
+    "01. AI Ready Data Module/현황분석/인터뷰 준비/계열사 인터뷰 Timeline.md",
     "01. AI Ready Data Module/일일 Action Item/2026-05-15.md",
     "01. AI Ready Data Module/Framework/주제별 백서 구성 및 Key Question 답변 가이드.md",
     "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
@@ -216,14 +221,9 @@
     "무제.canvas",
     "research/신규주제추천.md",
     "research/리서치-요약.md",
-    "01. AI Ready Data Module/현황분석/인터뷰 준비/계열사 인터뷰 Timeline.md",
-    "01. AI Ready Data Module/현황분석/사전질의서/에너빌리티 답변.md",
     "01. AI Ready Data Module/현황분석/사전질의서/밥캣 답변.md",
     "01. AI Ready Data Module/현황분석/사전질의서/VCC 질의서 답변.md",
     "01. AI Ready Data Module/현황분석/사전질의서/전자BG 질의서 답변.md",
-    "01. AI Ready Data Module/Framework/현황분석/두산전자 문제점 KQ.md",
-    "01. AI Ready Data Module/AI Ready Data Adoption Playbook 요약 구조.md",
-    "01. AI Ready Data Module/Framework/0512 AI-Ready Data Framework.md",
     "01. AI Ready Data Module/Framework/주제별 Level 정의.md",
     "01. AI Ready Data Module/Framework/AI 발전 단계별 데이터 주제 정의.md",
     "01. AI Ready Data Module/Framework/기존 5 Framework.md",
