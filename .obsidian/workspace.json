@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/Databricks 관련/무제.md",
+                "file": "01. AI Ready Data Module/Framework/Databricks 관련/초안2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "무제"
+              "title": "초안2"
             }
           }
         ],
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/Databricks 관련/무제.md",
+                "file": "01. AI Ready Data Module/Framework/Databricks 관련/초안2.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "무제 의 개요"
+              "title": "초안2 의 개요"
             }
           }
         ],
@@ -201,8 +201,9 @@
   },
   "active": "b4b12a3ee4758238",
   "lastOpenFiles": [
+    "01. AI Ready Data Module/Framework/Databricks 관련/초안1.md",
+    "01. AI Ready Data Module/Framework/Databricks 관련/초안2.md",
     "01. AI Ready Data Module/현황분석/인터뷰 준비/인터뷰 준비 보고.md",
-    "01. AI Ready Data Module/Framework/Databricks 관련/무제.md",
     "01. AI Ready Data Module/Framework/무제 1/desktop.ini",
     "01. AI Ready Data Module/Framework/Databricks 관련",
     "01. AI Ready Data Module/현황분석/인터뷰 준비/에너빌리티 사전질의서 심층 분석.md",
@@ -229,7 +230,6 @@
     "01. AI Ready Data Module/Framework/20개 주제 MECE 재정비 - 주제별 고유 내용 정의.md",
     "2026-05-15.md",
     "무제.canvas",
-    "research/신규주제추천.md",
     "01. AI Ready Data Module/현황분석/인터뷰/desktop.ini",
     "01. AI Ready Data Module/현황분석/인터뷰 준비",
     "01. AI Ready Data Module/현황분석/사전질의서",
