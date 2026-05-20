@@ -35,8 +35,7 @@
               "title": "초안2"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -171,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/Framework/Databricks 관련/초안2.md",
+                "file": "03. 회의록/초안/0424 증평 Workshop.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "초안2 의 개요"
+              "title": "0424 증평 Workshop 의 개요"
             }
           }
         ],
@@ -199,10 +198,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b4b12a3ee4758238",
+  "active": "d59b9558876dfddc",
   "lastOpenFiles": [
-    "01. AI Ready Data Module/Framework/Databricks 관련/초안1.md",
     "01. AI Ready Data Module/Framework/Databricks 관련/초안2.md",
+    "01. AI Ready Data Module/Framework/Databricks 관련/초안1.md",
     "01. AI Ready Data Module/현황분석/인터뷰 준비/인터뷰 준비 보고.md",
     "01. AI Ready Data Module/Framework/무제 1/desktop.ini",
     "01. AI Ready Data Module/Framework/Databricks 관련",
