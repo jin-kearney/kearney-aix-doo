@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/현황분석/사전질의서/VCC 질의서 답변.md",
+                "file": "01. AI Ready Data Module/현황분석/인터뷰 회의록/인터뷰 회의록들.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VCC 질의서 답변"
+              "title": "인터뷰 회의록들"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/현황분석/사전질의서/VCC 질의서 답변.md",
+                "file": "01. AI Ready Data Module/현황분석/인터뷰 회의록/인터뷰 회의록들.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "VCC 질의서 답변 의 개요"
+              "title": "인터뷰 회의록들 의 개요"
             }
           }
         ],
@@ -213,8 +213,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "27fe07562472df4c",
+  "active": "1b85ad2f970844f1",
   "lastOpenFiles": [
+    "01. AI Ready Data Module/현황분석/사전질의서/VCC 질의서 답변.md",
+    "01. AI Ready Data Module/현황분석/인터뷰 회의록/인터뷰 회의록들.md",
     "01. AI Ready Data Module/현황분석/인터뷰 회의록",
     "01. AI Ready Data Module/현황분석/사전질의서/퓨얼셀 질의서 답변.md",
     "01. AI Ready Data Module/일일 Action Item/2026-05-21.md",
@@ -242,7 +244,6 @@
     "01. AI Ready Data Module/현황분석/사전질의서/에너빌리티추가답변.md",
     "01. AI Ready Data Module/현황분석/사전질의서/DDI 질의서 답변.md",
     "01. AI Ready Data Module/일일 Action Item/2026-05-15.md",
-    "01. AI Ready Data Module/Framework/주제별 백서 구성 및 Key Question 답변 가이드.md",
     "무제.canvas",
     "01. AI Ready Data Module/현황분석/인터뷰/desktop.ini",
     "01. AI Ready Data Module/현황분석/인터뷰 준비",
@@ -251,7 +252,6 @@
     "01. AI Ready Data Module/Framework/Outdated/무제/desktop.ini",
     "01. AI Ready Data Module/Framework/무제",
     "01. AI Ready Data Module/베이스.base",
-    "01. AI Ready Data Module/Framework/무제/desktop.ini",
     "AI Ready Data Module/무제.canvas"
   ]
 }
