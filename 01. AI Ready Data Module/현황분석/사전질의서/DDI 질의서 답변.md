@@ -40,5 +40,4 @@ No.	기간	지원 계열사	과제(프로젝트)명	상세
 23	26년 내 진행	에너빌리티	26년 MCP Tools 플랫폼 구축 및 AI 기반 지능형 분석 시스템 개발	MCP Tools 플랫폼 구축 및 AI 기반 지능형 분석 시스템 개발 (AI솔루션팀과 협업)
 24	25.12~26.01	에너빌리티	AI 활용 EHS 통합 모니터링 시스템 서버 구축(CCTV)	GPU서버 제공
 25	26.02~26.07	에너빌리티	풍력 발전량 예측 시스템 고도화	기 구축된 풍력 발전량 예측 관련 부분에 대해 고도화 추진 예정
-<img width="1569" height="619" alt="image" src="https://github.com/user-attachments/assets/f753ecf0-8cc6-451d-a8e2-1381635b87ed" />
 
