@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/현황분석/사전질의서/밥캣 답변.md",
+                "file": "01. AI Ready Data Module/현황분석/인터뷰 회의록/0528 테스나.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "밥캣 답변"
+              "title": "0528 테스나"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/현황분석/사전질의서/밥캣 답변.md",
+                "file": "01. AI Ready Data Module/현황분석/인터뷰 회의록/0528 테스나.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "밥캣 답변 의 개요"
+              "title": "0528 테스나 의 개요"
             }
           }
         ],
@@ -215,6 +215,9 @@
   },
   "active": "1b85ad2f970844f1",
   "lastOpenFiles": [
+    "01. AI Ready Data Module/현황분석/인터뷰 회의록/인터뷰 회의록들.md",
+    "01. AI Ready Data Module/현황분석/사전질의서/밥캣 답변.md",
+    "01. AI Ready Data Module/현황분석/인터뷰 회의록/0528 테스나.md",
     "01. AI Ready Data Module/현황분석/사전질의서/DDI 질의서 답변.md",
     "01. AI Ready Data Module/현황분석/사전질의서/VCC 질의서 답변.md",
     "01. AI Ready Data Module/현황분석/사전질의서/전자BG 질의서 답변.md",
@@ -223,7 +226,6 @@
     "01. AI Ready Data Module/현황분석/인터뷰 회의록/0527 VCC 회의록.md",
     "01. AI Ready Data Module/현황분석/인터뷰 회의록/0526 퓨얼셀 인터뷰.md",
     "01. AI Ready Data Module/현황분석/인터뷰 회의록/0521 에너빌리티 인터뷰.md",
-    "01. AI Ready Data Module/현황분석/인터뷰 회의록/인터뷰 회의록들.md",
     "01. AI Ready Data Module/현황분석/인터뷰 회의록",
     "01. AI Ready Data Module/일일 Action Item/2026-05-21.md",
     "01. AI Ready Data Module/현황분석/인터뷰 준비/에너빌리티 사전질의서 심층 분석.md",
@@ -240,10 +242,8 @@
     "03. 회의록/초안/0519 1차공유회 준비.md",
     "01. AI Ready Data Module/현황분석/사전질의서/에너빌리티 답변3.md",
     "01. AI Ready Data Module/현황분석/사전질의서/에너빌리티 답변.md",
-    "01. AI Ready Data Module/현황분석/사전질의서/밥캣 답변.md",
     "01. AI Ready Data Module/Framework/최종 구조 및 주제.md",
     "01. AI Ready Data Module/AI Ready Data Adoption Playbook 요약 구조.md",
-    "01. AI Ready Data Module/Framework/0512 AI-Ready Data Framework.md",
     "무제.canvas",
     "01. AI Ready Data Module/현황분석/인터뷰/desktop.ini",
     "01. AI Ready Data Module/현황분석/인터뷰 준비",
