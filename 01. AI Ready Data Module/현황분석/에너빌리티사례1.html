@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>에너빌리티 운전 시계열 데이터 적재·분석 문제점</title>
+  <style>
+    :root {
+      --blue: #005eb8;
+      --blue2: #0070c9;
+      --light-blue: #eaf4ff;
+      --mid-blue: #b9d7f2;
+      --dark: #1d2733;
+      --gray: #667085;
+      --line: #d7e4f2;
+      --warn: #fff4e5;
+      --warn-border: #f5b14c;
+      --mint: #e9fbf3;
+      --mint-border: #38b57c;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #f2f5f8;
+      font-family: "Malgun Gothic", "Apple SD Gothic Neo", Arial, sans-serif;
+      color: var(--dark);
+    }
+
+    .slide {
+      width: 1600px;
+      height: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      position: relative;
+      overflow: hidden;
+      padding: 30px 48px 34px;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      border-bottom: 4px solid var(--blue2);
+      padding-bottom: 18px;
+    }
+
+    .title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .title-mark {
+      width: 11px;
+      height: 42px;
+      background: var(--blue);
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      color: var(--blue);
+      letter-spacing: -1.2px;
+      font-weight: 800;
+    }
+
+    .page-tag {
+      font-size: 18px;
+      color: #8a97a8;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 24px 0 18px 16px;
+      font-size: 23px;
+      line-height: 1.45;
+      letter-spacing: -0.6px;
+    }
+
+    .subtitle strong { color: var(--blue); }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      height: 650px;
+    }
+
+    .left-panel, .right-panel {
+      border: 2px solid #0b73d1;
+      border-radius: 2px;
+      position: relative;
+      background: linear-gradient(#ffffff, #ffffff) padding-box;
+    }
+
+    .panel-head {
+      position: absolute;
+      top: -22px;
+      left: 28px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+    }
+
+    .panel-no {
+      width: 46px;
+      height: 44px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 26px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .panel-title {
+      height: 44px;
+      padding: 0 26px;
+      display: flex;
+      align-items: center;
+      background: var(--mid-blue);
+      color: #172033;
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+    }
+
+    .left-content {
+      padding: 42px 26px 22px;
+      height: 100%;
+      display: grid;
+      grid-template-rows: 282px 1fr;
+      gap: 20px;
+    }
+
+    .process-map {
+      display: grid;
+      grid-template-columns: 1.05fr 44px 1.05fr 44px 1.05fr 44px 1.05fr;
+      align-items: stretch;
+      gap: 0;
+    }
+
+    .process-card {
+      border: 1.7px solid #a7d8f9;
+      border-radius: 8px;
+      background: #fbfdff;
+      padding: 12px 12px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-width: 0;
+    }
+
+    .process-card .icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--light-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      margin: 0 auto 8px;
+      border: 1px solid #c8e0f8;
+    }
+
+    .process-card h3 {
+      margin: 0 0 8px;
+      text-align: center;
+      color: #111827;
+      font-size: 18px;
+      line-height: 1.25;
+      letter-spacing: -0.6px;
+      font-weight: 900;
+    }
+
+    .process-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #344054;
+      font-size: 14.5px;
+      line-height: 1.42;
+      letter-spacing: -0.4px;
+    }
+
+    .arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8aa2b8;
+      font-size: 40px;
+      font-weight: 900;
+    }
+
+    .pain-zone {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .pain-card {
+      background: var(--warn);
+      border: 1.5px solid var(--warn-border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      position: relative;
+      min-height: 185px;
+    }
+
+    .pain-card::before {
+      content: "";
+      position: absolute;
+      top: -11px;
+      left: 24px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid var(--warn-border);
+    }
+
+    .pain-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: #8a4c00;
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: -0.4px;
+    }
+
+    .pain-card p {
+      margin: 0 0 9px;
+      font-size: 14.5px;
+      line-height: 1.45;
+      letter-spacing: -0.35px;
+      color: #3d2b12;
+    }
+
+    .quote {
+      padding: 8px 9px;
+      background: rgba(255,255,255,0.7);
+      border-left: 4px solid #e0a13a;
+      color: #5c3b08;
+      font-size: 13.5px;
+      line-height: 1.45;
+      letter-spacing: -0.35px;
+      font-weight: 700;
+    }
+
+    .right-content {
+      padding: 44px 24px 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .issue-summary {
+      background: #f8fbff;
+      border: 1.5px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 18px 16px;
+    }
+
+    .issue-summary h3 {
+      margin: 0 0 12px;
+      color: var(--blue);
+      font-size: 21px;
+      letter-spacing: -0.6px;
+      font-weight: 900;
+    }
+
+    .issue-line {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      margin: 10px 0;
+      align-items: start;
+      font-size: 16px;
+      line-height: 1.45;
+      letter-spacing: -0.45px;
+    }
+
+    .badge {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .metadata-box {
+      flex: 1;
+      background: var(--mint);
+      border: 1.6px solid var(--mint-border);
+      border-radius: 12px;
+      padding: 18px 18px 16px;
+    }
+
+    .metadata-box h3 {
+      margin: 0 0 12px;
+      font-size: 21px;
+      color: #067243;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .meta-item {
+      background: rgba(255,255,255,0.76);
+      border: 1px solid #bfe8d2;
+      border-radius: 8px;
+      padding: 10px 11px;
+      min-height: 78px;
+    }
+
+    .meta-item b {
+      display: block;
+      color: #0f6841;
+      font-size: 15px;
+      margin-bottom: 5px;
+      letter-spacing: -0.4px;
+    }
+
+    .meta-item span {
+      color: #344054;
+      font-size: 13.5px;
+      line-height: 1.35;
+      letter-spacing: -0.3px;
+    }
+
+    .bottom-message {
+      position: absolute;
+      left: 48px;
+      right: 48px;
+      bottom: 30px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .conclusion {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 25px;
+      line-height: 1.35;
+      letter-spacing: -0.8px;
+      font-weight: 500;
+    }
+
+    .conclusion strong {
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .connector {
+      position: absolute;
+      width: 40px;
+      height: 22px;
+      background: #90a9c1;
+      clip-path: polygon(0 20%, 55% 20%, 55% 0, 100% 50%, 55% 100%, 55% 80%, 0 80%);
+      opacity: 0.95;
+    }
+
+    .connector.c1 { left: 954px; top: 442px; }
+
+    .small-label {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: #edf6ff;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+    }
+
+    .footer-note {
+      position: absolute;
+      right: 52px;
+      bottom: 12px;
+      color: #b8c0ca;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="title-row">
+      <div class="title-wrap">
+        <div class="title-mark"></div>
+        <h1>데이터 관점 문제점</h1>
+      </div>
+      <div class="page-tag">Doosan Enerbility · 운전 시계열 데이터</div>
+    </div>
+
+    <div class="subtitle">
+      발전소 운전 데이터를 수집·적재하여 <strong>운전 상태 분석, 예측, 진단, 리포팅, AI 기반 판단</strong>에 활용하고자 하나,<br />
+      현장·프로젝트·계측기·제어시스템별 데이터 기준이 달라 동일 신호 식별과 분석 데이터 확보에 병목 발생
+    </div>
+
+    <div class="main-grid">
+      <section class="left-panel">
+        <div class="panel-head">
+          <div class="panel-no">1</div>
+          <div class="panel-title">As-Is 업무 흐름 및 데이터 병목</div>
+        </div>
+
+        <div class="left-content">
+          <div class="process-map">
+            <div class="process-card">
+              <div>
+                <div class="icon">🏭</div>
+                <h3>발전소 운전데이터 발생</h3>
+                <ul>
+                  <li>계측기 원천값, 제어시스템 I/O, 평균값, 원본값 혼재</li>
+                  <li>현장·호기·프로젝트마다 태그 체계 상이</li>
+                </ul>
+              </div>
+              <span class="small-label">Raw Signal</span>
+            </div>
+
+            <div class="arrow">➜</div>
+
+            <div class="process-card">
+              <div>
+                <div class="icon">👷</div>
+                <h3>현장 인력 CSV 추출·정제</h3>
+                <ul>
+                  <li>운전데이터는 보안 데이터로 실시간 수집 제한</li>
+                  <li>CSV 추출 방식에 따라 컬럼·description 변경</li>
+                </ul>
+              </div>
+              <span class="small-label">Manual Export</span>
+            </div>
+
+            <div class="arrow">➜</div>
+
+            <div class="process-card">
+              <div>
+                <div class="icon">🧑‍💻</div>
+                <h3>분석 담당자 태그 매핑</h3>
+                <ul>
+                  <li>동일 운전 신호 여부를 도메인 지식 보유자가 직접 판단</li>
+                  <li>프로젝트가 바뀌면 ID 값이 달라져 재사용 어려움</li>
+                </ul>
+              </div>
+              <span class="small-label">Tag Mapping</span>
+            </div>
+
+            <div class="arrow">➜</div>
+
+            <div class="process-card">
+              <div>
+                <div class="icon">📈</div>
+                <h3>분석·예측·진단 활용</h3>
+                <ul>
+                  <li>운전 상태 분석, 이상 진단, 리포팅에 활용</li>
+                  <li>시간 기준·원본/가공 여부 확인 없이는 AI 판단 신뢰도 저하</li>
+                </ul>
+              </div>
+              <span class="small-label">AI Analytics</span>
+            </div>
+          </div>
+
+          <div class="pain-zone">
+            <div class="pain-card">
+              <div class="pain-title">⚠️ 태그명·Description 불일치</div>
+              <p>같은 운전 신호라도 현장, 프로젝트, 계측기, 제어시스템, CSV 추출 방식에 따라 태그명과 설명이 다르게 들어옴</p>
+              <div class="quote">“동일 데이터 여부를 도메인 지식 보유자가 직접 판단해 매핑해야 함”</div>
+            </div>
+
+            <div class="pain-card">
+              <div class="pain-title">⚠️ 원본/가공 데이터 혼재</div>
+              <p>계측기 원천값, 제어시스템 input/output, 평균값, 원본값이 같은 분석 대상 안에 섞여 있어 데이터 해석 기준이 흔들림</p>
+              <div class="quote">“원천값인지, 제어 입력인지, 평균값인지 확인이 필요함”</div>
+            </div>
+
+            <div class="pain-card">
+              <div class="pain-title">⚠️ 시간 기준 상이</div>
+              <p>수집 시스템과 추출 파일별로 타임스탬프 부여 기준이 달라 시계열 정렬, 이벤트 전후 분석, 모델 학습 구간 정의가 어려움</p>
+              <div class="quote">“타임스탬프가 다르게 부여되는 경우가 많음”</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="right-panel">
+        <div class="panel-head">
+          <div class="panel-no">2</div>
+          <div class="panel-title">AI Ready Data 관점 시사점</div>
+        </div>
+
+        <div class="right-content">
+          <div class="issue-summary">
+            <h3>핵심 문제점</h3>
+            <div class="issue-line">
+              <div class="badge">1</div>
+              <div>Raw Data 파일만으로는 <b>같은 운전 신호인지 식별</b>하기 어려움</div>
+            </div>
+            <div class="issue-line">
+              <div class="badge">2</div>
+              <div>신호별 <b>출처·수집 기준·원본/가공 여부</b>가 문서화되어 있지 않음</div>
+            </div>
+            <div class="issue-line">
+              <div class="badge">3</div>
+              <div>태그 매핑과 기준 확인이 사람에게 의존해 <b>과제마다 반복 소요</b>됨</div>
+            </div>
+            <div class="issue-line">
+              <div class="badge">4</div>
+              <div>운전데이터 보안 제약으로 <b>자동 수집보다 CSV 전달 방식</b>에 의존</div>
+            </div>
+          </div>
+
+          <div class="metadata-box">
+            <h3>필요 데이터 주제 : A-2 메타데이터</h3>
+            <div class="meta-grid">
+              <div class="meta-item">
+                <b>신호 의미 정의</b>
+                <span>태그명, description, 업무 의미, 유사 태그 관계, 동일 신호 식별 기준</span>
+              </div>
+              <div class="meta-item">
+                <b>출처 및 생성 기준</b>
+                <span>현장, 프로젝트, 호기, 계측기, 제어시스템, CSV 추출 방식</span>
+              </div>
+              <div class="meta-item">
+                <b>데이터 성격 구분</b>
+                <span>원천값, 제어 input/output, 평균값, 가공값, 계산 로직 여부</span>
+              </div>
+              <div class="meta-item">
+                <b>시간 기준 관리</b>
+                <span>타임스탬프 생성 위치, 수집 주기, 보정 기준, 이벤트 기준 시점</span>
+              </div>
+              <div class="meta-item">
+                <b>보안·접근 조건</b>
+                <span>실시간 수집 제한 여부, CSV 반출 기준, 승인 주체, 활용 가능 범위</span>
+              </div>
+              <div class="meta-item">
+                <b>재사용 가능한 매핑 룰</b>
+                <span>프로젝트 변경 시에도 활용 가능한 표준 태그 사전과 매핑 이력 관리</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="connector c1"></div>
+
+    <div class="bottom-message">
+      <div class="conclusion">
+        운전 시계열 데이터를 AI 분석에 활용하기 위해서는<br />
+        <strong>신호별 의미·출처·수집 기준·원본/가공 여부·시간 기준을 관리하는 메타데이터 체계</strong> 필요
+      </div>
+      <div class="conclusion">
+        현장 수작업 CSV 전달 중심에서<br />
+        <strong>재사용 가능한 태그 매핑·데이터 해석 기준</strong>으로 전환 필요
+      </div>
+    </div>
+
+    <div class="footer-note">6</div>
+  </div>
+</body>
+</html>
