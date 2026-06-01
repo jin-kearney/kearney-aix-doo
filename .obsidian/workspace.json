@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/일일 Action Item/2026-06-01.md",
+                "file": "01. AI Ready Data Module/Framework/주제.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-06-01"
+              "title": "주제"
             }
           }
         ],
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/일일 Action Item/2026-06-01.md",
+                "file": "01. AI Ready Data Module/Framework/주제.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2026-06-01 의 개요"
+              "title": "주제 의 개요"
             }
           }
         ],
@@ -201,9 +201,10 @@
   },
   "active": "1b85ad2f970844f1",
   "lastOpenFiles": [
+    "01. AI Ready Data Module/일일 Action Item/2026-06-01.md",
+    "01. AI Ready Data Module/Framework/주제.md",
     "01. AI Ready Data Module/현황분석/에너빌리티사례1.html",
     "01. AI Ready Data Module/현황분석/인터뷰 회의록/0529 밥캣 회의록.md",
-    "01. AI Ready Data Module/일일 Action Item/2026-06-01.md",
     "01. AI Ready Data Module/현황분석/인터뷰 회의록/0529 두산BG 회의록.md",
     "01. AI Ready Data Module/현황분석/인터뷰 회의록/0528 테스나.md",
     "01. AI Ready Data Module/현황분석/인터뷰 회의록/인터뷰 회의록들.md",
@@ -237,7 +238,6 @@
     "01. AI Ready Data Module/현황분석",
     "01. AI Ready Data Module/Framework/Outdated/무제/desktop.ini",
     "01. AI Ready Data Module/Framework/무제",
-    "01. AI Ready Data Module/베이스.base",
     "AI Ready Data Module/무제.canvas"
   ]
 }
