@@ -313,15 +313,15 @@
 
 **핵심 메시지**: 시장에는 다양한 리니지 플랫폼이 있다. 스택 환경과 OT 적합성을 기준으로 선택해야 한다.
 
-| 도구 | 유형 | 리니지 방식 | 컬럼 레벨 | AI/RAG 리니지 | Gartner 포지션(2025) | 제조/OT 적합성 |
-|---|---|---|---|---|---|---|
-| **Collibra** | 상용(엔터프라이즈) | QueryFlow 기술 — SQL 파싱 + OpenLineage(2025.06 추가). 테이블·컬럼 단위 | ✅ | 부분(거버넌스 연계) | **Leader** | 중간(IT 스택 중심) |
-| **Alation** | 상용(엔터프라이즈) | Active Metadata 카탈로그 기반 + Manta 파트너십으로 컬럼 단위 크로스-시스템 리니지 | ✅(Manta 통합 시) | 부분(카탈로그 연계) | **Leader** | 중간 |
-| **Atlan** | 상용(모던 스택) | SQL 파싱(Snowflake/BigQuery/Redshift/Databricks) + OpenLineage 런타임 이벤트 네이티브 수신. G2 9.1/10 | ✅(네이티브, BI까지) | ✅ AI 리니지 및 MCP 연동 | **Leader**(D&A Governance, 2026) | 낮음(클라우드 특화) |
-| **Informatica IDMC** | 상용(엔터프라이즈) | EDC + Axon: 자동화 스캐너로 SQL·저장 프로시저·AI/ML 코드 파싱. 멀티클라우드 | ✅(고급 스캐너) | 부분(CLAIRE AI) | **Leader**(최고 비전 완성도) | 중간(SAP·Oracle 연동 강점) |
-| **IBM watsonx.data(MANTA)** | 상용(엔터프라이즈) | 구 MANTA 기술 통합: DB·ETL·BI 전방위 자동 리니지. 컬럼 단위 step-by-step 분석 | ✅(가장 광범위한 소스) | 부분(거버넌스 연계) | **Leader** | **중간~높음**(레거시·메인프레임 강점) |
-| **Microsoft Purview** | 상용(Azure 생태계) | Azure Fabric·ADF·Synapse 네이티브 스캔. 비Azure는 커넥터 개발 필요 | △(Azure는 지원, 프리뷰) | 부분(Fabric AI Foundry 예정) | Challenger | 낮음(Azure 전제) |
-| **Ataccama ONE** | 상용(DQ 중심) | 자동 리니지 + 품질 오버레이를 리니지 다이어그램에 직접 표시(업계 유일) | ✅(기술·비즈니스 뷰) | 부분(AI 설명·agentic DQ) | **Leader**(Augmented DQ) | **중간**(제조 레퍼런스 있음) |
+| 도구                          | 유형            | 리니지 방식                                                                                  | 컬럼 레벨             | AI/RAG 리니지               | Gartner 포지션(2025)                | 제조/OT 적합성               |
+| --------------------------- | ------------- | --------------------------------------------------------------------------------------- | ----------------- | ------------------------ | -------------------------------- | ----------------------- |
+| **Collibra**                | 상용(엔터프라이즈)    | QueryFlow 기술 — SQL 파싱 + OpenLineage(2025.06 추가). 테이블·컬럼 단위                              | ✅                 | 부분(거버넌스 연계)              | **Leader**                       | 중간(IT 스택 중심)            |
+| **Alation**                 | 상용(엔터프라이즈)    | Active Metadata 카탈로그 기반 + Manta 파트너십으로 컬럼 단위 크로스-시스템 리니지                                | ✅(Manta 통합 시)     | 부분(카탈로그 연계)              | **Leader**                       | 중간                      |
+| **Atlan**                   | 상용(모던 스택)     | SQL 파싱(Snowflake/BigQuery/Redshift/Databricks) + OpenLineage 런타임 이벤트 네이티브 수신. G2 9.1/10 | ✅(네이티브, BI까지)     | ✅ AI 리니지 및 MCP 연동        | **Leader**(D&A Governance, 2026) | 낮음(클라우드 특화)             |
+| **Informatica IDMC**        | 상용(엔터프라이즈)    | EDC + Axon: 자동화 스캐너로 SQL·저장 프로시저·AI/ML 코드 파싱. 멀티클라우드                                    | ✅(고급 스캐너)         | 부분(CLAIRE AI)            | **Leader**(최고 비전 완성도)            | 중간(SAP·Oracle 연동 강점)    |
+| **IBM watsonx.data(MANTA)** | 상용(엔터프라이즈)    | 구 MANTA 기술 통합: DB·ETL·BI 전방위 자동 리니지. 컬럼 단위 step-by-step 분석                              | ✅(가장 광범위한 소스)     | 부분(거버넌스 연계)              | **Leader**                       | **중간~높음**(레거시·메인프레임 강점) |
+| **Microsoft Purview**       | 상용(Azure 생태계) | Azure Fabric·ADF·Synapse 네이티브 스캔. 비Azure는 커넥터 개발 필요                                     | △(Azure는 지원, 프리뷰) | 부분(Fabric AI Foundry 예정) | Challenger                       | 낮음(Azure 전제)            |
+| **Ataccama ONE**            | 상용(DQ 중심)     | 자동 리니지 + 품질 오버레이를 리니지 다이어그램에 직접 표시(업계 유일)                                               | ✅(기술·비즈니스 뷰)      | 부분(AI 설명·agentic DQ)     | **Leader**(Augmented DQ)         | **중간**(제조 레퍼런스 있음)      |
 
 ### [슬라이드 20] Tech Spec — 오픈소스 솔루션 비교
 
