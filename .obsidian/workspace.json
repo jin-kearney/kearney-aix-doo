@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "claude/C-3/C-3 Storyline.md",
+                "file": "claude/B-2/storyline.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "C-3 Storyline"
+              "title": "storyline"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "claude/C-3/C-3 Storyline.md",
+                "file": "claude/B-2/storyline.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "C-3 Storyline 의 개요"
+              "title": "storyline 의 개요"
             }
           }
         ],
@@ -186,28 +186,28 @@
   },
   "active": "27fe07562472df4c",
   "lastOpenFiles": [
+    "claude/C-3/storyline.md",
+    "claude/B-2/storyline.md",
+    "claude/C-3/C-3 Storyline.md",
+    "claude/C-3/verification.md",
     "claude/무제/desktop.ini",
-    "claude/C-2",
-    "claude/verification.md",
-    "claude/summary.md",
-    "claude/storyline.md",
-    "claude/research/research-what.md",
-    "claude/research/research-why-when.md",
-    "claude/research/research-how.md",
-    "claude/research/research-kpi-roadmap.md",
-    "claude/research",
+    "claude/B-2",
+    "claude/B-2/verification.md",
+    "claude/B-2/summary.md",
+    "claude/B-2/research/research-what.md",
+    "claude/B-2/research/research-why-when.md",
+    "claude/B-2/research/research-how.md",
+    "claude/B-2/research/research-kpi-roadmap.md",
+    "claude/B-2/research",
     "claude/C-3/desktop.ini",
     "claude/C-3",
     "claude/research/desktop.ini",
-    "claude/C-3/verification.md",
     "claude/C-3/summary.md",
-    "claude/C-3/storyline.md",
-    "claude/C-2/research/research-why-when.md",
-    "claude/C-2/research/research-how.md",
-    "claude/C-2/research/research-what.md",
-    "claude/C-2/research/research-kpi-roadmap.md",
-    "claude/C-2/research",
-    "claude/C-3/C-3 Storyline.md",
+    "claude/C-3/research/research-why-when.md",
+    "claude/C-3/research/research-how.md",
+    "claude/C-3/research/research-what.md",
+    "claude/C-3/research/research-kpi-roadmap.md",
+    "claude/C-3/research",
     "claude",
     "01. AI Ready Data Module/최종 주제.md",
     "01. AI Ready Data Module/일일 Action Item/2026-06-01.md",
@@ -221,7 +221,6 @@
     "01. AI Ready Data Module/현황분석/인터뷰 회의록/인터뷰 회의록들.md",
     "01. AI Ready Data Module/현황분석/사전질의서/밥캣 답변.md",
     "01. AI Ready Data Module/현황분석/사전질의서/DDI 질의서 답변.md",
-    "01. AI Ready Data Module/현황분석/인터뷰 회의록",
     "무제.canvas",
     "AI Ready Data Module/무제.canvas"
   ]
