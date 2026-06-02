@@ -381,20 +381,20 @@
 ### [슬라이드 20] Tech Spec — 시장 솔루션/플레이어 맵 (12개)
 **헤드라인:** 라벨링 플랫폼은 과제 유형(CV/NLP/시계열)·규모·온프레미스 여부·AI 자동화 수준에 따라 선택한다. 오픈소스와 상용 SaaS를 조합하는 것이 실용적이다.
 
-| 솔루션 | 제공사 | 분류 | 핵심 기능 | AI 기능 | 비고 |
-|--------|--------|------|-----------|---------|------|
-| **Labelbox** | Labelbox, Inc. | 상용 SaaS | 이미지·비디오·텍스트·문서 annotation, Batch/Workflow 관리 | Pre-labeling, Active Learning, LLM 멀티모달 지원 | API-first. 모델 에러 분석·데이터 슬라이스 |
-| **Scale AI** | Scale AI, Inc. | 상용 + Managed Service | 대규모 CV·NLP·Sensor Fusion, RLHF, LLM 평가, SFT 데이터 생성 | RLHF 파이프라인, GPT-4o/Amazon Nova 통합 | Remotasks(CV/AV), Outlier(LLM annotation) 운영 |
-| **Label Studio** | HumanSignal | 오픈소스 + Enterprise | 텍스트·이미지·오디오·비디오·시계열 전방위 지원, ML Backend SDK | ML Backend 연동 pre-labeling, Active Learning API | 가장 폭넓은 모달리티. 셀프호스팅 가능 |
-| **CVAT** | CVAT.ai (오픈소스) | 오픈소스 + SaaS | 이미지·비디오 CV annotation(BBox·Polygon·Keypoint·Cuboid 등), 비디오 트래킹 | SAM·YOLO 내장 AI Plugin. 반자동 세그멘테이션 | 가장 활성화된 오픈소스 CV 도구 |
-| **Encord** | Encord Ltd. | 상용 SaaS | 이미지·비디오·DICOM 의료영상, annotation + curation + 모델 평가 통합 | SAM 2 내장, GPT-4o 통합, Active Learning, 자동 객체 추적 | 헬스케어·자율주행 특화. SOC2/HIPAA |
-| **SuperAnnotate** | SuperAnnotate Inc. | 상용 SaaS | 이미지·비디오·텍스트, 관리형 workforce 연계, 품질 대시보드 | Auto-annotation, Pre-labeling, Managed Workforce | 대용량 프로젝트 throughput 강점 |
-| **V7 (Darwin)** | V7 Labs | 상용 SaaS | 이미지·비디오 CV, 데이터셋 관리·버전 관리, 모델 학습 통합 | Auto-annotation, SAM 기반 세그멘테이션 | 생명과학·AV 분야 강세 |
-| **Roboflow** | Roboflow Inc. | 상용 SaaS (Freemium) | CV 특화: 수집→annotation→전처리→증강→모델 학습 end-to-end | AI-assisted annotation, SAM 연동, YOLO 직접 학습 | 스타트업·중소팀 접근성 최고. 무료 플랜 |
-| **Snorkel Flow** | Snorkel AI | 상용 SaaS / On-Prem | Programmatic Labeling, LF 관리, Label Model, NLP·CV·구조화 데이터 | Weak Supervision(LF 기반), LLM 기반 LF 생성 지원 | 수작업 라벨 최소화 패러다임. 대규모 비정형 데이터 |
-| **SageMaker Ground Truth** | AWS | 클라우드 관리형 | 이미지·텍스트·비디오 annotation, Mechanical Turk/민간 workforce 연계 | 내장 Active Learning, 자동 라벨링 임계치 설정 | AWS 생태계 완전 통합(S3·Lambda) |
-| **Prodigy** | Explosion AI | 상용 라이선스 (설치형) | NLP 특화: NER·관계 추출·텍스트 분류, spaCy 연동 | Active Learning 기본 내장, 제로샷 분류기 연동 | NLP 전용 경량 도구. 영구 라이선스 1회 구매 |
-| **Cleanlab Studio** | Cleanlab Inc. | 상용 SaaS + 오픈소스 | 라벨 오류 탐지·수정, 데이터 품질 감사, 아웃라이어·중복 탐지 | Confident Learning 기반 자동 라벨 오류 식별. model-agnostic | 라벨링 후 QA 전문 도구. scikit-learn·PyTorch 호환 |
+| 솔루션                        | 제공사                | 분류                   | 핵심 기능                                                          | AI 기능                                             | 비고                                           |
+| -------------------------- | ------------------ | -------------------- | -------------------------------------------------------------- | ------------------------------------------------- | -------------------------------------------- |
+| **Labelbox**               | Labelbox, Inc.     | 상용 SaaS              | 이미지·비디오·텍스트·문서 annotation, Batch/Workflow 관리                   | Pre-labeling, Active Learning, LLM 멀티모달 지원        | API-first. 모델 에러 분석·데이터 슬라이스                 |
+| **Scale AI**               | Scale AI, Inc.     | 상용 + Managed Service | 대규모 CV·NLP·Sensor Fusion, RLHF, LLM 평가, SFT 데이터 생성             | RLHF 파이프라인, GPT-4o/Amazon Nova 통합                 | Remotasks(CV/AV), Outlier(LLM annotation) 운영 |
+| **Label Studio**           | HumanSignal        | 오픈소스 + Enterprise    | 텍스트·이미지·오디오·비디오·시계열 전방위 지원, ML Backend SDK                     | ML Backend 연동 pre-labeling, Active Learning API   | 가장 폭넓은 모달리티. 셀프호스팅 가능                        |
+| **CVAT**                   | CVAT.ai (오픈소스)     | 오픈소스 + SaaS          | 이미지·비디오 CV annotation(BBox·Polygon·Keypoint·Cuboid 등), 비디오 트래킹 | SAM·YOLO 내장 AI Plugin. 반자동 세그멘테이션                 | 가장 활성화된 오픈소스 CV 도구                           |
+| **Encord**                 | Encord Ltd.        | 상용 SaaS              | 이미지·비디오·DICOM 의료영상, annotation + curation + 모델 평가 통합           | SAM 2 내장, GPT-4o 통합, Active Learning, 자동 객체 추적    | 헬스케어·자율주행 특화. SOC2/HIPAA                     |
+| **SuperAnnotate**          | SuperAnnotate Inc. | 상용 SaaS              | 이미지·비디오·텍스트, 관리형 workforce 연계, 품질 대시보드                         | Auto-annotation, Pre-labeling, Managed Workforce  | 대용량 프로젝트 throughput 강점                       |
+| **V7 (Darwin)**            | V7 Labs            | 상용 SaaS              | 이미지·비디오 CV, 데이터셋 관리·버전 관리, 모델 학습 통합                            | Auto-annotation, SAM 기반 세그멘테이션                    | 생명과학·AV 분야 강세                                |
+| **Roboflow**               | Roboflow Inc.      | 상용 SaaS (Freemium)   | CV 특화: 수집→annotation→전처리→증강→모델 학습 end-to-end                   | AI-assisted annotation, SAM 연동, YOLO 직접 학습        | 스타트업·중소팀 접근성 최고. 무료 플랜                       |
+| **Snorkel Flow**           | Snorkel AI         | 상용 SaaS / On-Prem    | Programmatic Labeling, LF 관리, Label Model, NLP·CV·구조화 데이터      | Weak Supervision(LF 기반), LLM 기반 LF 생성 지원          | 수작업 라벨 최소화 패러다임. 대규모 비정형 데이터                 |
+| **SageMaker Ground Truth** | AWS                | 클라우드 관리형             | 이미지·텍스트·비디오 annotation, Mechanical Turk/민간 workforce 연계        | 내장 Active Learning, 자동 라벨링 임계치 설정                 | AWS 생태계 완전 통합(S3·Lambda)                     |
+| **Prodigy**                | Explosion AI       | 상용 라이선스 (설치형)        | NLP 특화: NER·관계 추출·텍스트 분류, spaCy 연동                             | Active Learning 기본 내장, 제로샷 분류기 연동                 | NLP 전용 경량 도구. 영구 라이선스 1회 구매                  |
+| **Cleanlab Studio**        | Cleanlab Inc.      | 상용 SaaS + 오픈소스       | 라벨 오류 탐지·수정, 데이터 품질 감사, 아웃라이어·중복 탐지                            | Confident Learning 기반 자동 라벨 오류 식별. model-agnostic | 라벨링 후 QA 전문 도구. scikit-learn·PyTorch 호환      |
 
 ### [슬라이드 21] 구축 시 고려사항·함정(Pitfall) 8가지
 **헤드라인:** 라벨링 프로젝트 실패의 대부분은 기술 문제가 아니라 가이드라인 모호성·기준 편향·자동 라벨 과신·Gold Set 오염 같은 운영·설계 문제에서 온다.
