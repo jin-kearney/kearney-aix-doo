@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "claude/B-2/storyline.md",
+                "file": "01. AI Ready Data Module/현황분석/CSO보고추가질문/서비스AI_딥다이브_추가질문지.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "storyline"
+              "title": "서비스AI_딥다이브_추가질문지"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "claude/B-2/storyline.md",
+                "file": "01. AI Ready Data Module/현황분석/CSO보고추가질문/서비스AI_딥다이브_추가질문지.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "storyline 의 개요"
+              "title": "서비스AI_딥다이브_추가질문지 의 개요"
             }
           }
         ],
@@ -186,13 +186,18 @@
   },
   "active": "2cb847dc3c82548b",
   "lastOpenFiles": [
+    "01. AI Ready Data Module/현황분석/CSO보고추가질문/밥캣 Service AI 요약.md",
+    "02. Pilot Module/Pilot.md",
+    "claude/B-2/storyline.md",
+    "01. AI Ready Data Module/현황분석/CSO보고추가질문/desktop.ini",
+    "01. AI Ready Data Module/현황분석/CSO보고추가질문/서비스AI_딥다이브_추가질문지.md",
+    "01. AI Ready Data Module/현황분석/CSO보고추가질문",
     "01. AI Ready Data Module/현황분석/CHRO 정리.md",
     "claude/현황ES.md",
     "01. AI Ready Data Module/현황분석/인터뷰 회의록/0602 CHRO 인터뷰.md",
     "01. AI Ready Data Module/현황분석/인터뷰 회의록/0528 DDI 인터뷰.md",
     "claude/# 두산 계열사 AI-Ready Data 현황분석 Summary.md",
     "claude/C-3/storyline.md",
-    "claude/B-2/storyline.md",
     "claude/C-3/C-3 Storyline.md",
     "claude/C-3/verification.md",
     "claude/무제/desktop.ini",
@@ -217,11 +222,6 @@
     "01. AI Ready Data Module/최종 주제.md",
     "01. AI Ready Data Module/일일 Action Item/2026-06-01.md",
     "01. AI Ready Data Module/현황분석/인터뷰 준비/에너빌리티 사전질의서 심층 분석.md",
-    "01. AI Ready Data Module/B-2 작성초안.html",
-    "01. AI Ready Data Module/Framework/주제.md",
-    "01. AI Ready Data Module/현황분석/에너빌리티사례1.html",
-    "01. AI Ready Data Module/현황분석/인터뷰 회의록/0529 밥캣 회의록.md",
-    "01. AI Ready Data Module/현황분석/인터뷰 회의록/0529 두산BG 회의록.md",
     "무제.canvas",
     "AI Ready Data Module/무제.canvas"
   ]
