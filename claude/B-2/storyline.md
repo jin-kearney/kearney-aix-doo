@@ -101,11 +101,11 @@
 ### [슬라이드 7] 세 층위 구분: Annotation(micro) / Label(macro) / 해설(Description) — 하나의 개념이 아니다
 **헤드라인:** Annotation은 인스턴스 내부의 "어디(위치·구간)"에 의미를 붙이고, Label은 인스턴스 전체의 "무엇(범주·정답)"을 부여한다. 해설은 데이터셋·컬럼을 설명하는 보조적 자유 서술이다.
 
-| 층위            | 용어                   | 단위                                          | 핵심 질문                    | 예시                                             |
-| ------------- | -------------------- | ------------------------------------------- | ------------------------ | ---------------------------------------------- |
-| **Micro**     | **Annotation (주석)**  | 데이터 인스턴스의 **일부** (영역·픽셀·토큰·구간)              | "데이터 안 어디에 무엇이 있나?"      | 이미지 내 바운딩박스, 텍스트 내 NER span, 센서 이상 구간 시작·끝     |
-| **Macro**     | **Label (라벨)**       | 데이터 인스턴스 **전체** (이미지 한 장, 문장·문서 하나, 레코드 하나) | "데이터 전체가 무엇인가?"          | 이미지 분류 태그(불량/정상), 문서 감성(긍정/부정), 결함 유형 코드       |
-| **Free-form** | **해설 (Description)** | 데이터셋·컬럼·필드                                  | "이 데이터가 무엇이고 어떻게 만들어졌나?" | Datasheets for Datasets, Data Cards 등 자유 서술 문서 |
+| 층위 | 용어 | 단위 | 핵심 질문 | 예시 |
+|------|------|------|-----------|------|
+| **Micro** | **Annotation (주석)** | 데이터 인스턴스의 **일부** (영역·픽셀·토큰·구간) | "데이터 안 어디에 무엇이 있나?" | 이미지 내 바운딩박스, 텍스트 내 NER span, 센서 이상 구간 시작·끝 |
+| **Macro** | **Label (라벨)** | 데이터 인스턴스 **전체** (이미지 한 장, 문장·문서 하나, 레코드 하나) | "데이터 전체가 무엇인가?" | 이미지 분류 태그(불량/정상), 문서 감성(긍정/부정), 결함 유형 코드 |
+| **Free-form** | **해설 (Description)** | 데이터셋·컬럼·필드 | "이 데이터가 무엇이고 어떻게 만들어졌나?" | Datasheets for Datasets, Data Cards 등 자유 서술 문서 |
 
 **실무·학술 공통 원칙**: "모든 라벨링은 annotation이지만, 모든 annotation이 라벨링은 아니다." Annotation이 상위 개념이며 Label은 annotation의 한 형태(instance-level classification).
 
@@ -120,14 +120,14 @@
 ### [슬라이드 8] Annotation 유형 (이미지 CV): Bounding Box → Polygon → Semantic Mask → Keypoint
 **헤드라인:** 이미지 annotation은 정밀도와 비용이 비례한다. 과제(Object Detection / Instance Segmentation / Semantic Segmentation / Pose Estimation)에 맞는 유형 선택이 핵심이다.
 
-| 유형                             | 정의                                | ML 과제                                       | 특징                                    |
-| ------------------------------ | --------------------------------- | ------------------------------------------- | ------------------------------------- |
-| **Bounding Box**               | 객체를 둘러싸는 직사각형 (x, y, w, h)        | Object Detection (YOLO, Faster R-CNN)       | 가장 빠르고 비용 효율적. 객체 정확한 형태 표현 불가        |
-| **Polygon / Instance Mask**    | 객체 외곽선을 꼭짓점으로 추적하는 다각형            | Instance Segmentation (Mask R-CNN)          | Bbox 대비 IoU 15~30% 향상. 생성 시간 3~10배 소요 |
-| **Semantic Mask (Pixel-wise)** | 모든 픽셀을 클래스에 할당                    | Semantic Segmentation (DeepLab, U-Net)      | 가장 세밀하나 가장 비용·시간 소요. 자율주행·의료 영상       |
-| **Keypoint / Skeleton**        | 특정 관절·랜드마크 포인트 (x, y, visibility) | Pose Estimation, Facial Landmark            | 인체 자세 분석, 작업자 안전 모니터링                 |
-| **Polyline**                   | 닫히지 않은 선분                         | 차선 감지, 전력선 경로 탐지                            | 자율주행 차선 인식, 지도 도로 추출                  |
-| **Image Classification Tag**   | 이미지 전체에 카테고리 태그 (Macro = Label)   | Image Classification (ResNet, EfficientNet) | 불량/정상 이진 분류, 제품 카테고리 분류               |
+| 유형 | 정의 | ML 과제 | 특징 |
+|------|------|---------|------|
+| **Bounding Box** | 객체를 둘러싸는 직사각형 (x, y, w, h) | Object Detection (YOLO, Faster R-CNN) | 가장 빠르고 비용 효율적. 객체 정확한 형태 표현 불가 |
+| **Polygon / Instance Mask** | 객체 외곽선을 꼭짓점으로 추적하는 다각형 | Instance Segmentation (Mask R-CNN) | Bbox 대비 IoU 15~30% 향상. 생성 시간 3~10배 소요 |
+| **Semantic Mask (Pixel-wise)** | 모든 픽셀을 클래스에 할당 | Semantic Segmentation (DeepLab, U-Net) | 가장 세밀하나 가장 비용·시간 소요. 자율주행·의료 영상 |
+| **Keypoint / Skeleton** | 특정 관절·랜드마크 포인트 (x, y, visibility) | Pose Estimation, Facial Landmark | 인체 자세 분석, 작업자 안전 모니터링 |
+| **Polyline** | 닫히지 않은 선분 | 차선 감지, 전력선 경로 탐지 | 자율주행 차선 인식, 지도 도로 추출 |
+| **Image Classification Tag** | 이미지 전체에 카테고리 태그 (Macro = Label) | Image Classification (ResNet, EfficientNet) | 불량/정상 이진 분류, 제품 카테고리 분류 |
 
 [도식 설명: 동일 결함 이미지에 대해 왼쪽→오른쪽으로 Bounding Box(사각형) → Polygon(외곽선 다각형) → Semantic Mask(픽셀 색칠)를 나란히 배치하여 정밀도 vs. 비용 트레이드오프를 시각화. Image Classification Tag는 이미지 상단에 "불량" 태그 하나가 붙는 형태.]
 
@@ -207,11 +207,11 @@
 ### [슬라이드 12] IAA (Inter-Annotator Agreement): 라벨 일관성을 정량화하는 핵심 지표
 **헤드라인:** IAA는 동일 데이터에 대해 여러 annotator가 부여한 annotation의 일치 수준을 정량화한다. Cohen's κ·Fleiss' κ·Krippendorff's α 중 annotator 수와 데이터 유형에 맞는 지표를 선택한다.
 
-| 지표                    | 적용 조건                        | 권장 임계값                       | 특징                                      |
-| --------------------- | ---------------------------- | ---------------------------- | --------------------------------------- |
-| **Cohen's Kappa (κ)** | 2인 annotator, 범주형 데이터        | κ ≥ 0.80                     | 가장 기본. 우연 일치를 보정한 일치율. 두 명만 지원          |
-| **Fleiss' Kappa**     | 3인 이상 annotator, 범주형 데이터     | κ ≥ 0.80                     | Cohen's κ의 다인 확장. 고정된 rater 수 가정        |
-| **Krippendorff's α**  | 다수 annotator, 다양한 척도, 결측값 허용 | α ≥ 0.80 (신뢰); α ≥ 0.67 (잠정) | Crowdsourcing 파이프라인에 가장 적합. 모든 척도 유형 지원 |
+| 지표 | 적용 조건 | 권장 임계값 | 특징 |
+|------|-----------|------------|------|
+| **Cohen's Kappa (κ)** | 2인 annotator, 범주형 데이터 | κ ≥ 0.80 | 가장 기본. 우연 일치를 보정한 일치율. 두 명만 지원 |
+| **Fleiss' Kappa** | 3인 이상 annotator, 범주형 데이터 | κ ≥ 0.80 | Cohen's κ의 다인 확장. 고정된 rater 수 가정 |
+| **Krippendorff's α** | 다수 annotator, 다양한 척도, 결측값 허용 | α ≥ 0.80 (신뢰); α ≥ 0.67 (잠정) | Crowdsourcing 파이프라인에 가장 적합. 모든 척도 유형 지원 |
 
 **Cohen's κ 해석 기준 (Landis & Koch):**
 
@@ -275,16 +275,16 @@
 ### [슬라이드 15] 라벨링 프로젝트 라이프사이클 8단계: 정의 → 라벨링 → 검수 → 반복
 **헤드라인:** 모든 라벨링 프로젝트는 8단계 사이클을 따른다. 각 단계의 산출물과 선행 조건을 명확히 해야 다음 단계 진입 여부를 판단할 수 있다.
 
-| 단계  | 명칭                          | 주요 산출물                                    | 선행 조건                     |
-| --- | --------------------------- | ----------------------------------------- | ------------------------- |
-| 1   | **대상 데이터 선정**               | 데이터 인벤토리, 샘플 목록                           | 모델 목표 정의, 데이터 접근 권한       |
-| 2   | **라벨 Taxonomy 설계**          | 클래스 계층 구조 문서, 라벨 코드북                      | 도메인 SME 참여                |
-| 3   | **Annotation Guideline 작성** | 시각적 예시 포함 가이드라인 문서                        | Taxonomy 확정, pilot 데이터 샘플 |
-| 4   | **Pilot 라벨링**               | 200~1,000건 라벨 결과                          | 가이드라인 초안, annotator 3~5명  |
-| 5   | **IAA 측정 및 가이드라인 보정**       | Kappa/Krippendorff's Alpha 리포트, 가이드라인 개정본 | Pilot 결과                  |
-| 6   | **본 라벨링**                   | 라벨 데이터셋 (COCO/YOLO/CoNLL 등 포맷)            | IAA ≥ 목표치, 검수 체계 가동       |
-| 7   | **QA/검수**                   | 검수 리포트, 재작업 지시서                           | 본 라벨링 배치 완료               |
-| 8   | **데이터셋 버전 관리**              | 버전 태그된 데이터셋, 변경 이력                        | QA 통과 기준 충족               |
+| 단계 | 명칭 | 주요 산출물 | 선행 조건 |
+|------|------|------------|----------|
+| 1 | **대상 데이터 선정** | 데이터 인벤토리, 샘플 목록 | 모델 목표 정의, 데이터 접근 권한 |
+| 2 | **라벨 Taxonomy 설계** | 클래스 계층 구조 문서, 라벨 코드북 | 도메인 SME 참여 |
+| 3 | **Annotation Guideline 작성** | 시각적 예시 포함 가이드라인 문서 | Taxonomy 확정, pilot 데이터 샘플 |
+| 4 | **Pilot 라벨링** | 200~1,000건 라벨 결과 | 가이드라인 초안, annotator 3~5명 |
+| 5 | **IAA 측정 및 가이드라인 보정** | Kappa/Krippendorff's Alpha 리포트, 가이드라인 개정본 | Pilot 결과 |
+| 6 | **본 라벨링** | 라벨 데이터셋 (COCO/YOLO/CoNLL 등 포맷) | IAA ≥ 목표치, 검수 체계 가동 |
+| 7 | **QA/검수** | 검수 리포트, 재작업 지시서 | 본 라벨링 배치 완료 |
+| 8 | **데이터셋 버전 관리** | 버전 태그된 데이터셋, 변경 이력 | QA 통과 기준 충족 |
 
 ### [슬라이드 16] 규모별 4-Phase 구축 프레임워크: Pilot → PoC → Growth → Scale
 **헤드라인:** 라벨링 규모(500건 → 1만 건 → 10만 건 → 100만 건+)에 따라 Phase별로 다른 접근이 필요하다. Phase가 올라갈수록 AI 보조와 자동화 비중이 높아진다.
@@ -381,20 +381,20 @@
 ### [슬라이드 20] Tech Spec — 시장 솔루션/플레이어 맵 (12개)
 **헤드라인:** 라벨링 플랫폼은 과제 유형(CV/NLP/시계열)·규모·온프레미스 여부·AI 자동화 수준에 따라 선택한다. 오픈소스와 상용 SaaS를 조합하는 것이 실용적이다.
 
-| 솔루션                        | 제공사                | 분류                   | 핵심 기능                                                          | AI 기능                                             | 비고                                           |
-| -------------------------- | ------------------ | -------------------- | -------------------------------------------------------------- | ------------------------------------------------- | -------------------------------------------- |
-| **Labelbox**               | Labelbox, Inc.     | 상용 SaaS              | 이미지·비디오·텍스트·문서 annotation, Batch/Workflow 관리                   | Pre-labeling, Active Learning, LLM 멀티모달 지원        | API-first. 모델 에러 분석·데이터 슬라이스                 |
-| **Scale AI**               | Scale AI, Inc.     | 상용 + Managed Service | 대규모 CV·NLP·Sensor Fusion, RLHF, LLM 평가, SFT 데이터 생성             | RLHF 파이프라인, GPT-4o/Amazon Nova 통합                 | Remotasks(CV/AV), Outlier(LLM annotation) 운영 |
-| **Label Studio**           | HumanSignal        | 오픈소스 + Enterprise    | 텍스트·이미지·오디오·비디오·시계열 전방위 지원, ML Backend SDK                     | ML Backend 연동 pre-labeling, Active Learning API   | 가장 폭넓은 모달리티. 셀프호스팅 가능                        |
-| **CVAT**                   | CVAT.ai (오픈소스)     | 오픈소스 + SaaS          | 이미지·비디오 CV annotation(BBox·Polygon·Keypoint·Cuboid 등), 비디오 트래킹 | SAM·YOLO 내장 AI Plugin. 반자동 세그멘테이션                 | 가장 활성화된 오픈소스 CV 도구                           |
-| **Encord**                 | Encord Ltd.        | 상용 SaaS              | 이미지·비디오·DICOM 의료영상, annotation + curation + 모델 평가 통합           | SAM 2 내장, GPT-4o 통합, Active Learning, 자동 객체 추적    | 헬스케어·자율주행 특화. SOC2/HIPAA                     |
-| **SuperAnnotate**          | SuperAnnotate Inc. | 상용 SaaS              | 이미지·비디오·텍스트, 관리형 workforce 연계, 품질 대시보드                         | Auto-annotation, Pre-labeling, Managed Workforce  | 대용량 프로젝트 throughput 강점                       |
-| **V7 (Darwin)**            | V7 Labs            | 상용 SaaS              | 이미지·비디오 CV, 데이터셋 관리·버전 관리, 모델 학습 통합                            | Auto-annotation, SAM 기반 세그멘테이션                    | 생명과학·AV 분야 강세                                |
-| **Roboflow**               | Roboflow Inc.      | 상용 SaaS (Freemium)   | CV 특화: 수집→annotation→전처리→증강→모델 학습 end-to-end                   | AI-assisted annotation, SAM 연동, YOLO 직접 학습        | 스타트업·중소팀 접근성 최고. 무료 플랜                       |
-| **Snorkel Flow**           | Snorkel AI         | 상용 SaaS / On-Prem    | Programmatic Labeling, LF 관리, Label Model, NLP·CV·구조화 데이터      | Weak Supervision(LF 기반), LLM 기반 LF 생성 지원          | 수작업 라벨 최소화 패러다임. 대규모 비정형 데이터                 |
-| **SageMaker Ground Truth** | AWS                | 클라우드 관리형             | 이미지·텍스트·비디오 annotation, Mechanical Turk/민간 workforce 연계        | 내장 Active Learning, 자동 라벨링 임계치 설정                 | AWS 생태계 완전 통합(S3·Lambda)                     |
-| **Prodigy**                | Explosion AI       | 상용 라이선스 (설치형)        | NLP 특화: NER·관계 추출·텍스트 분류, spaCy 연동                             | Active Learning 기본 내장, 제로샷 분류기 연동                 | NLP 전용 경량 도구. 영구 라이선스 1회 구매                  |
-| **Cleanlab Studio**        | Cleanlab Inc.      | 상용 SaaS + 오픈소스       | 라벨 오류 탐지·수정, 데이터 품질 감사, 아웃라이어·중복 탐지                            | Confident Learning 기반 자동 라벨 오류 식별. model-agnostic | 라벨링 후 QA 전문 도구. scikit-learn·PyTorch 호환      |
+| 솔루션 | 제공사 | 분류 | 핵심 기능 | AI 기능 | 비고 |
+|--------|--------|------|-----------|---------|------|
+| **Labelbox** | Labelbox, Inc. | 상용 SaaS | 이미지·비디오·텍스트·문서 annotation, Batch/Workflow 관리 | Pre-labeling, Active Learning, LLM 멀티모달 지원 | API-first. 모델 에러 분석·데이터 슬라이스 |
+| **Scale AI** | Scale AI, Inc. | 상용 + Managed Service | 대규모 CV·NLP·Sensor Fusion, RLHF, LLM 평가, SFT 데이터 생성 | RLHF 파이프라인, GPT-4o/Amazon Nova 통합 | Remotasks(CV/AV), Outlier(LLM annotation) 운영 |
+| **Label Studio** | HumanSignal | 오픈소스 + Enterprise | 텍스트·이미지·오디오·비디오·시계열 전방위 지원, ML Backend SDK | ML Backend 연동 pre-labeling, Active Learning API | 가장 폭넓은 모달리티. 셀프호스팅 가능 |
+| **CVAT** | CVAT.ai (오픈소스) | 오픈소스 + SaaS | 이미지·비디오 CV annotation(BBox·Polygon·Keypoint·Cuboid 등), 비디오 트래킹 | SAM·YOLO 내장 AI Plugin. 반자동 세그멘테이션 | 가장 활성화된 오픈소스 CV 도구 |
+| **Encord** | Encord Ltd. | 상용 SaaS | 이미지·비디오·DICOM 의료영상, annotation + curation + 모델 평가 통합 | SAM 2 내장, GPT-4o 통합, Active Learning, 자동 객체 추적 | 헬스케어·자율주행 특화. SOC2/HIPAA |
+| **SuperAnnotate** | SuperAnnotate Inc. | 상용 SaaS | 이미지·비디오·텍스트, 관리형 workforce 연계, 품질 대시보드 | Auto-annotation, Pre-labeling, Managed Workforce | 대용량 프로젝트 throughput 강점 |
+| **V7 (Darwin)** | V7 Labs | 상용 SaaS | 이미지·비디오 CV, 데이터셋 관리·버전 관리, 모델 학습 통합 | Auto-annotation, SAM 기반 세그멘테이션 | 생명과학·AV 분야 강세 |
+| **Roboflow** | Roboflow Inc. | 상용 SaaS (Freemium) | CV 특화: 수집→annotation→전처리→증강→모델 학습 end-to-end | AI-assisted annotation, SAM 연동, YOLO 직접 학습 | 스타트업·중소팀 접근성 최고. 무료 플랜 |
+| **Snorkel Flow** | Snorkel AI | 상용 SaaS / On-Prem | Programmatic Labeling, LF 관리, Label Model, NLP·CV·구조화 데이터 | Weak Supervision(LF 기반), LLM 기반 LF 생성 지원 | 수작업 라벨 최소화 패러다임. 대규모 비정형 데이터 |
+| **SageMaker Ground Truth** | AWS | 클라우드 관리형 | 이미지·텍스트·비디오 annotation, Mechanical Turk/민간 workforce 연계 | 내장 Active Learning, 자동 라벨링 임계치 설정 | AWS 생태계 완전 통합(S3·Lambda) |
+| **Prodigy** | Explosion AI | 상용 라이선스 (설치형) | NLP 특화: NER·관계 추출·텍스트 분류, spaCy 연동 | Active Learning 기본 내장, 제로샷 분류기 연동 | NLP 전용 경량 도구. 영구 라이선스 1회 구매 |
+| **Cleanlab Studio** | Cleanlab Inc. | 상용 SaaS + 오픈소스 | 라벨 오류 탐지·수정, 데이터 품질 감사, 아웃라이어·중복 탐지 | Confident Learning 기반 자동 라벨 오류 식별. model-agnostic | 라벨링 후 QA 전문 도구. scikit-learn·PyTorch 호환 |
 
 ### [슬라이드 21] 구축 시 고려사항·함정(Pitfall) 8가지
 **헤드라인:** 라벨링 프로젝트 실패의 대부분은 기술 문제가 아니라 가이드라인 모호성·기준 편향·자동 라벨 과신·Gold Set 오염 같은 운영·설계 문제에서 온다.
