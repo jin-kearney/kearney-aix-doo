@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "claude/B-2/KPI_로드맵_장표안.md",
+                "file": "claude/계열사별_AI과제_사례매핑_공통PainPoint.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "KPI_로드맵_장표안"
+              "title": "계열사별_AI과제_사례매핑_공통PainPoint"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "claude/B-2/KPI_로드맵_장표안.md",
+                "file": "claude/계열사별_AI과제_사례매핑_공통PainPoint.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "KPI_로드맵_장표안 의 개요"
+              "title": "계열사별_AI과제_사례매핑_공통PainPoint 의 개요"
             }
           }
         ],
@@ -186,7 +186,9 @@
   },
   "active": "2cb847dc3c82548b",
   "lastOpenFiles": [
+    "claude/# 두산 계열사 AI-Ready Data 현황분석 Summary.md",
     "claude/계열사별_AI과제_사례매핑_공통PainPoint.md",
+    "claude/B-2/KPI_로드맵_장표안.md",
     "01. AI Ready Data Module/현황분석/CSO보고추가질문/테스나_AVI_Verify_딥다이브_추가질문지.md",
     "claude/E-1/research/research-why-when.md",
     "claude/E-1/research/research-what.md",
@@ -212,8 +214,6 @@
     "claude/D-3_0610/research/sources/src-305-mlflow-prompt-registry.md",
     "claude/D-3_0610/research/sources/src-308-vinish-dev-prompt-versioning.md",
     "claude/D-3_0610/research/sources/src-307-arxiv-llm-audit-trails.md",
-    "claude/D-3_0610/research/sources/src-306-zenml-prompt-management-production.md",
-    "claude/D-3_0610/research/sources/src-304-medium-enterprise-prompt-registry.md",
     "claude/D-3_0610/research/sources",
     "claude/D-3_0610/research",
     "claude/D-3_0610",
