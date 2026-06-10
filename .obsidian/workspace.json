@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01. AI Ready Data Module/현황분석/CSO보고추가질문/테스나_AVI_Verify_딥다이브_추가질문지.md",
+                "file": "claude/B-2/KPI_로드맵_장표안.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "테스나_AVI_Verify_딥다이브_추가질문지"
+              "title": "KPI_로드맵_장표안"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01. AI Ready Data Module/현황분석/CSO보고추가질문/테스나_AVI_Verify_딥다이브_추가질문지.md",
+                "file": "claude/B-2/KPI_로드맵_장표안.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "테스나_AVI_Verify_딥다이브_추가질문지 의 개요"
+              "title": "KPI_로드맵_장표안 의 개요"
             }
           }
         ],
@@ -186,42 +186,42 @@
   },
   "active": "2cb847dc3c82548b",
   "lastOpenFiles": [
-    "01. AI Ready Data Module/현황분석/CSO보고추가질문/서비스AI_딥다이브_추가질문지.md",
     "01. AI Ready Data Module/현황분석/CSO보고추가질문/테스나_AVI_Verify_딥다이브_추가질문지.md",
-    "01. AI Ready Data Module/현황분석/CSO보고추가질문/밥캣 Service AI 요약.md",
-    "02. Pilot Module/Pilot.md",
-    "claude/B-2/storyline.md",
-    "01. AI Ready Data Module/현황분석/CSO보고추가질문/desktop.ini",
-    "01. AI Ready Data Module/현황분석/CSO보고추가질문",
-    "01. AI Ready Data Module/현황분석/CHRO 정리.md",
-    "claude/현황ES.md",
-    "01. AI Ready Data Module/현황분석/인터뷰 회의록/0602 CHRO 인터뷰.md",
-    "01. AI Ready Data Module/현황분석/인터뷰 회의록/0528 DDI 인터뷰.md",
-    "claude/# 두산 계열사 AI-Ready Data 현황분석 Summary.md",
-    "claude/C-3/storyline.md",
-    "claude/C-3/C-3 Storyline.md",
-    "claude/C-3/verification.md",
-    "claude/무제/desktop.ini",
-    "claude/B-2",
-    "claude/B-2/verification.md",
-    "claude/B-2/summary.md",
-    "claude/B-2/research/research-what.md",
-    "claude/B-2/research/research-why-when.md",
-    "claude/B-2/research/research-how.md",
-    "claude/B-2/research/research-kpi-roadmap.md",
-    "claude/B-2/research",
-    "claude/C-3/desktop.ini",
-    "claude/C-3",
-    "claude/research/desktop.ini",
-    "claude/C-3/summary.md",
-    "claude/C-3/research/research-why-when.md",
-    "claude/C-3/research/research-how.md",
-    "claude/C-3/research/research-what.md",
-    "claude/C-3/research/research-kpi-roadmap.md",
-    "claude/C-3/research",
-    "claude",
-    "01. AI Ready Data Module/최종 주제.md",
-    "01. AI Ready Data Module/일일 Action Item/2026-06-01.md",
+    "claude/E-1/research/research-why-when.md",
+    "claude/E-1/research/research-what.md",
+    "claude/E-1/research/research-how.md",
+    "claude/E-1/research/research-kpi-roadmap.md",
+    "claude/E-1/verification.md",
+    "claude/E-1/summary.md",
+    "claude/E-1/research",
+    "claude/E-1/storyline.md",
+    "claude/E-1",
+    "claude/D-3_0610/research/sources/src-409-datadog-prompt-tracking.md",
+    "claude/D-3_0610/research/sources/src-410-microsoft-learn-genaiops-maturity.md",
+    "claude/D-3_0610/research/sources/src-408-ibm-genai-maturity.md",
+    "claude/D-3_0610/research/sources/src-407-digitalapplied-90day-rollout.md",
+    "claude/D-3_0610/research/sources/src-406-zenml-prompt-management-production.md",
+    "claude/D-3_0610/research/sources/src-405-zenml-llmops-maturity.md",
+    "claude/D-3_0610/research/sources/src-403-mlflow-prompt-registry.md",
+    "claude/D-3_0610/research/sources/src-404-deepchecks-prompt-incidents.md",
+    "claude/D-3_0610/research/sources/src-401-digitalapplied-prompt-library-metrics.md",
+    "claude/D-3_0610/research/sources/src-402-azure-llmops-maturity-model.md",
+    "claude/D-3_0610/research/sources/src-310-tianpan-semver-lie.md",
+    "claude/D-3_0610/research/sources/src-309-techdebt-prompt-engineering-debt.md",
+    "claude/D-3_0610/research/sources/src-305-mlflow-prompt-registry.md",
+    "claude/D-3_0610/research/sources/src-308-vinish-dev-prompt-versioning.md",
+    "claude/D-3_0610/research/sources/src-307-arxiv-llm-audit-trails.md",
+    "claude/D-3_0610/research/sources/src-306-zenml-prompt-management-production.md",
+    "claude/D-3_0610/research/sources/src-304-medium-enterprise-prompt-registry.md",
+    "claude/D-3_0610/research/sources/src-303-medium-prompt-rot.md",
+    "claude/D-3_0610/research/sources",
+    "claude/D-3_0610/research",
+    "claude/D-3_0610",
+    "claude/D-3_0609/research/sources",
+    "claude/D-3_0609/research",
+    "claude/D-3_0609",
+    "claude/D-3_0605/research",
+    "claude/D-3_0605",
     "무제.canvas",
     "AI Ready Data Module/무제.canvas"
   ]
