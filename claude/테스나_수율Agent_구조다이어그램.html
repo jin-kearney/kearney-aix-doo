@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>수율 최적화 추천 Agent — 과제 구조 다이어그램</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Malgun Gothic','Apple SD Gothic Neo',sans-serif; background:#e8eaed; display:flex; justify-content:center; padding:16px; }
+  .slide { width:1480px; background:#fff; padding:26px 36px 18px; box-shadow:0 2px 14px rgba(0,0,0,.18); }
+  :root { --blue:#1b3f8f; --lightblue:#eaf0fa; --red:#c0392b; --lightred:#fdecea; --amber:#b9770e; --green:#1e7e4f; }
+
+  h1 { font-size:24px; color:#111; border-left:7px solid var(--blue); padding-left:12px; }
+  h1 .sub { font-size:13.5px; color:#666; font-weight:normal; }
+  .headline { margin:10px 0 14px; font-size:15px; line-height:1.5; background:var(--lightblue); border:1px solid #c5d3ee; padding:9px 14px; border-radius:4px; }
+
+  .lane { border:1px solid #d9dde3; border-radius:6px; margin-bottom:6px; display:flex; }
+  .lane-label { width:118px; flex:none; display:flex; align-items:center; justify-content:center; text-align:center; font-size:12.5px; font-weight:bold; color:#fff; padding:8px 6px; line-height:1.4; border-radius:5px 0 0 5px; }
+  .lane-label small { font-weight:normal; font-size:10.5px; opacity:.85; display:block; margin-top:3px; }
+  .lane-body { flex:1; padding:10px 12px; }
+  .l-phy .lane-label { background:#5d6d7e; } .l-sys .lane-label { background:var(--blue); } .l-ai .lane-label { background:var(--red); }
+
+  .flow { display:flex; align-items:stretch; gap:0; }
+  .node { border:1.5px solid #aab4c4; border-radius:5px; background:#fafbfd; padding:7px 10px; font-size:11.5px; line-height:1.45; flex:1; }
+  .node .t { font-weight:bold; font-size:12.5px; color:#222; display:block; margin-bottom:2px; }
+  .node .t .en { font-size:10px; color:#888; font-weight:normal; }
+  .node.hl { border-color:var(--red); background:var(--lightred); }
+  .node.sys { border-color:var(--blue); background:#f3f7fd; }
+  .node.sys .t { color:var(--blue); }
+  .node.ai { border-color:var(--red); background:#fff; }
+  .node.ai .t { color:var(--red); }
+  .node.out { border-color:var(--green); background:#e9f5ee; } .node.out .t { color:var(--green); }
+  .arr { flex:none; display:flex; align-items:center; justify-content:center; width:30px; color:#888; font-size:17px; font-weight:bold; }
+  .down-row { display:flex; margin:1px 0; }
+  .down { flex:1; text-align:center; color:var(--blue); font-size:11px; line-height:1.2; }
+  .down b { font-size:14px; display:block; }
+  .down.red { color:var(--red); }
+  .spacer { width:30px; flex:none; }
+
+  .keynote { font-size:11px; color:var(--red); background:var(--lightred); border:1px dashed #e0a59d; border-radius:4px; padding:5px 9px; margin-top:7px; line-height:1.5; }
+
+  .joinbar { display:flex; align-items:center; gap:10px; margin-top:8px; }
+  .joinkey { background:var(--blue); color:#fff; font-size:11.5px; font-weight:bold; border-radius:14px; padding:4px 14px; white-space:nowrap; }
+  .joinline { flex:1; border-top:2px dashed var(--blue); position:relative; }
+
+  .verify { display:flex; gap:10px; margin-top:8px; align-items:stretch; }
+  .vbox { flex:1; border:1.5px solid #aab4c4; border-radius:5px; padding:7px 10px; font-size:11.5px; line-height:1.45; text-align:center; }
+  .vbox .t { font-weight:bold; display:block; font-size:12.5px; }
+  .vbox.a { border-color:var(--green); background:#e9f5ee; } .vbox.a .t{ color:var(--green); }
+  .vbox.b { border-color:#888; background:#f4f4f4; }
+  .vs { flex:none; display:flex; align-items:center; font-weight:bold; color:var(--red); font-size:15px; }
+
+  .gloss { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:12px; }
+  .g { border:1px solid #d9dde3; border-radius:4px; padding:6px 8px; font-size:10.5px; line-height:1.45; background:#fafbfd; }
+  .g .t { font-weight:bold; color:var(--blue); font-size:11.5px; display:block; }
+  .foot { margin-top:10px; font-size:9.5px; color:#999; line-height:1.5; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <h1>수율 최적화 추천 Agent — 과제 구조 한눈에 보기
+    <span class="sub">&nbsp;&gt; 현장(물리) → 시스템(데이터) → Agent(분석·검증) 3층 구조</span></h1>
+
+  <div class="headline">
+    웨이퍼 테스트에서는 <b>바늘이 칩에 닿는 품질(Contact)</b>이 나쁘면 멀쩡한 칩도 불량(가성fail)으로 판정되어 <b>Lot마다 수율이 출렁인다</b>.
+    이 Agent는 현장의 3개 데이터 소스를 <b>Lot ID로 연결</b>해, 과거 <b>수율 Top 10% Lot</b>이 썼던 Contact 조건을 찾아내
+    <b>신제품(S5E9965) 양산 전에 최적 세팅을 추천</b>하고, 추천 Lot vs 기존 Lot의 <b>수율 비교로 효과를 검증</b>한다.
+  </div>
+
+  <!-- LAYER 1 : 물리 세계 -->
+  <div class="lane l-phy">
+    <div class="lane-label">① 현장<small>Wafer Test 공정<br>(물리 세계)</small></div>
+    <div class="lane-body">
+      <div class="flow">
+        <div class="node"><span class="t">웨이퍼 Lot 입고 <span class="en">Lot = 웨이퍼 묶음</span></span>
+          고객이 만든 S5E9965 웨이퍼가 <b>Lot 단위</b>로 입고. Lot이 생산·이력·수율 관리의 기본 단위</div>
+        <div class="arr">→</div>
+        <div class="node hl"><span class="t">Prober + Probe Card가 칩에 접촉 <span class="en">Contact</span></span>
+          Chuck 위 웨이퍼에 Probe Card 바늘을 눌러 전기 연결. <b>이때의 세팅 = Contact 조건</b>:
+          Prober(Chuck) 평탄도 · P/Card 평탄도 · <b>OD</b>(바늘을 더 눌러주는 깊이, um) · <b>Sanding</b>(바늘 끝 연마 #400 사포·횟수)</div>
+        <div class="arr">→</div>
+        <div class="node"><span class="t">Tester 전기 측정 <span class="en">Test</span></span>
+          칩(die)마다 신호를 넣어 <b>pass / fail 판정</b>. 어떤 장비·호기가 언제 어떤 테스트를 했는지가 이력으로 남음</div>
+        <div class="arr">→</div>
+        <div class="node"><span class="t">Lot 수율 산출 <span class="en">Yield</span></span>
+          <b>수율 = 양품 die ÷ 전체 die</b>. Lot별로 집계되어 모니터링됨</div>
+      </div>
+      <div class="keynote">⚠ Contact이 불량하면(평탄도 틀어짐·OD 부족·바늘 오염) 접촉 저항이 커져 <b>정상 칩도 fail로 오판(가성fail)</b> → 같은 제품인데 <b>Lot 간 수율 편차</b> 발생.
+      양산 전 신제품은 최적 Contact 조건을 모르는 상태라 <b>엔지니어 경험으로 세팅</b>해 왔다 — 이 경험을 데이터로 대체하는 것이 본 과제.</div>
+    </div>
+  </div>
+
+  <!-- 하강 화살표: 물리 → 시스템 -->
+  <div class="down-row">
+    <div class="spacer" style="width:118px"></div>
+    <div class="down">데이터가 남는 곳<b>▼</b></div>
+    <div class="down red">장비에만 남음 (중앙시스템 ✕)<b>▼</b></div>
+    <div class="down">테스트 수행 기록<b>▼</b></div>
+    <div class="down">Lot별 수율 집계<b>▼</b></div>
+  </div>
+
+  <!-- LAYER 2 : 시스템 세계 -->
+  <div class="lane l-sys">
+    <div class="lane-label">② 시스템<small>3개 데이터 소스</small></div>
+    <div class="lane-body">
+      <div class="flow">
+        <div class="node sys" style="flex:0.9"><span class="t">공통 키 <span class="en">join key</span></span>
+          제품 · 장비 · 호기 · <b>Lot ID</b><br>3개 소스를 한 Lot으로 잇는 연결고리</div>
+        <div class="arr"></div>
+        <div class="node sys hl" style="border-color:var(--red)"><span class="t" style="color:var(--red)">설비 Log → Contact 조건</span>
+          Prober·장비가 남기는 설정/측정 로그. <b>OD·Sanding·평탄도</b>가 여기 있음. <b>장비·작업자 PC 단위로 흩어져 있어 위치 파악에 1~2주</b> (최난관)</div>
+        <div class="arr"></div>
+        <div class="node sys"><span class="t">MOS (MES) → Test 이력</span>
+          생산실행시스템. 어떤 Lot이 <b>어느 장비·호기에서 언제 어떤 테스트</b>를 받았는지의 수행 이력</div>
+        <div class="arr"></div>
+        <div class="node sys"><span class="t">Remon → 수율 결과</span>
+          Lot별 <b>수율 집계·모니터링</b> 시스템. 분석의 목표 변수(Y)인 수율이 여기서 나옴</div>
+      </div>
+      <div class="joinbar">
+        <div class="joinline"></div>
+        <div class="joinkey">Lot ID 기준 3종 결합 → "Lot 1줄 = Contact 조건 + Test 이력 + 수율" 통합 테이블</div>
+        <div class="joinline"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="down-row">
+    <div class="spacer" style="width:118px"></div>
+    <div class="down red"><b>▼</b> 동일 제품 과거 Lot 이력 투입</div>
+  </div>
+
+  <!-- LAYER 3 : Agent -->
+  <div class="lane l-ai">
+    <div class="lane-label">③ Agent<small>분석 → 추천 → 검증</small></div>
+    <div class="lane-body">
+      <div class="flow">
+        <div class="node ai"><span class="t">1. 수율 상위 Lot 추출</span>
+          과거 Lot들을 수율로 정렬, <b>Top 10% Lot</b>만 선별</div>
+        <div class="arr">→</div>
+        <div class="node ai"><span class="t">2. 공통 Contact 조건 분석</span>
+          Top 10% Lot들이 공유한 조건 패턴을 <b>LLM + Data Tree</b>(조건↔수율 관계 구조, 엔지니어와 2일 구축)로 도출</div>
+        <div class="arr">→</div>
+        <div class="node out"><span class="t">3. 추천 조합 출력</span>
+          Prober 평탄도 <b>±3um</b> · P/Card <b>±5um</b> · OD <b>45</b> · Sanding <b>#400/3회</b> — "이 세팅으로 시작하라"</div>
+        <div class="arr">→</div>
+        <div class="node ai"><span class="t">4. 양산 전 적용</span>
+          신규 S5E9965 Lot의 초기 Contact 세팅으로 적용 (엔지니어 감 → 데이터 근거)</div>
+      </div>
+      <div class="verify">
+        <div class="vbox a"><span class="t">추천 조합으로 진행한 Lot</span>Agent가 제시한 세팅으로 테스트</div>
+        <div class="vs">VS</div>
+        <div class="vbox b"><span class="t">기존 방식 Lot</span>엔지니어 경험 세팅으로 테스트</div>
+        <div class="vs">→</div>
+        <div class="vbox" style="flex:1.6"><span class="t" style="color:var(--red)">Lot 수율 비교로 효과성 검증</span>
+          두 그룹의 수율 차이 확인 (실 Lot 비교 불가 시, 과거 실적상 적용 가능한 조합인지로 대체 검증) — <b>현업 엔지니어 3명 × 1주</b> 검수</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 용어 사전 -->
+  <div class="gloss">
+    <div class="g"><span class="t">양산 (Mass Production)</span>제품 검증을 마치고 대량 생산·테스트에 들어가는 단계. "양산 전" = 최적 조건이 아직 정해지지 않은 시점</div>
+    <div class="g"><span class="t">Lot / 수율</span>Lot = 함께 처리되는 웨이퍼 묶음(관리 단위). 수율 = Lot 내 양품 칩 비율 — 테스나 사업 성과의 핵심 지표</div>
+    <div class="g"><span class="t">Contact 조건</span>바늘이 칩에 닿는 품질을 결정하는 세팅 4종(평탄도 2종 · OD · Sanding). 접촉이 나쁘면 가성fail↑ → 수율↓</div>
+    <div class="g"><span class="t">OD (Over Drive)</span>바늘이 패드에 닿은 뒤 추가로 눌러주는 깊이(um). 부족하면 접촉 저항↑, 과하면 칩 손상 — 업계 연구상 ~45um에서 접촉 저항 안정</div>
+    <div class="g"><span class="t">Sanding (니들 연마)</span>연마 시트(#400 입도)로 바늘 끝 오염·이물을 닦는 클리닝. 횟수가 접촉 품질에 영향 (#400/3회 = 시트 입도·횟수)</div>
+  </div>
+
+  <div class="foot">
+    근거: Miracom 'AI Agent 추진 경과' 장표 · 딥다이브 질문지 1~10 인터뷰 답변(시스템명 MOS/설비Log/Remon, 단계별 기간) ·
+    도메인 보강: Tektronix Probe Card Tutorial, ScienceDirect(웨이퍼 프로브 접촉 저항, OD 45um 안정화), Accuprobe(Planarization) — 부록 출처 참조 &nbsp;|&nbsp; DOOSAN | AI-Ready Data 현황분석
+  </div>
+</div>
+</body>
+</html>
